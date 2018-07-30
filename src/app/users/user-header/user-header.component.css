@@ -1,0 +1,16 @@
+.container {
+    background-image: url("../../../assets/img/back1.jpeg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 300px;
+    margin-bottom: 150px;
+}
+
+.empty-row {
+    height: 150px;
+}
+
+img {
+    max-width: 25%;
+    height: auto;
+}
