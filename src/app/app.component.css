@@ -1,0 +1,30 @@
+.wrapper {
+    background-color: #e2e2e2;
+}
+
+.logo a img {
+    width: 30px;
+}
+
+nav ul li {
+    list-style: none;
+    margin-right: 10px;
+}
+
+header {
+    background-color: #e77a47;
+}
+
+header a {
+    padding: 18px 0;
+    color: white;
+    text-decoration: none;
+}
+
+header ul li a:hover, .selected {
+    border-bottom: 3px solid #81ca78;
+}
+
+.btn-light {
+    border: 1px solid #b9b9b9;
+}
