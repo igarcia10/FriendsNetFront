@@ -131,6 +131,21 @@
           {}
         ]
       }
+    },
+    {
+      "id": 4,
+      "text": "This is a Post",
+      "creationDate": "01/06/2018",
+      "type": 1,
+      "picture": "",
+      "likes":[
+      ],
+      "user":  {
+        "id": 4,
+        "name": "Edu",
+        "surname": "Agobiao",
+        "picture": ""
+      }
     }
   ]
 }
