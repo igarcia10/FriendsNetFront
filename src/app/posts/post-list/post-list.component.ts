@@ -11,7 +11,7 @@ import { UserService } from '../../users/shared/user.service';
 })
 export class PostListComponent implements OnInit {
 
-  user: User;
+  @Input() user: User;
   posts: Post[];
 
   constructor(private userService: UserService,
@@ -20,10 +20,7 @@ export class PostListComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.userService.getUserById(1)
-      .subscribe((data: User) => this.user = data);
-
-    this.postService.getPostsByPersonId(1)
+    this.postService.getPostsByPersonId(this.user.id)
       .subscribe((data: Post[]) => this.posts = data);
   }
 
