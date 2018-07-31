@@ -4,7 +4,7 @@
       <div class="row justify-content-start">
         <!--logo-->
         <div class="col-auto logo">
-          <a href="#">
+          <a href="#" routerLink="/home">
             <img src="../assets/img/friendsNet.png" alt="">
           </a>
         </div>
@@ -25,13 +25,13 @@
         </div>
         <!--nav-->
         <nav class="col-12 col-sm-3 col-lg-2 menu d-flex justify-content-around ml-auto">
-          <a href="#" class="image">
+          <a href="#" class="image" routerLink="/bio">
             <img src="../assets/img/profile1.jpg" height="22" width="22" alt="">
           </a>
-          <a href="#">
+          <a href="#" routerLink="/friends">
             <i class="fas fa-users"></i>
           </a>
-          <a href="#">
+          <a href="#" routerLink="/events">
             <i class="fa fa-calendar"></i>
           </a>
         </nav>
@@ -40,6 +40,6 @@
   </header>
   <main>
     <app-user-header></app-user-header>
-    <app-create-post></app-create-post>
+    <router-outlet></router-outlet>
   </main>
 </div>

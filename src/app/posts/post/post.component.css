@@ -1,0 +1,59 @@
+.post {
+    margin-bottom: 20px;
+}
+
+.post .pic {
+    padding-left: 15px;
+}
+
+.post .pic a {
+    width: 60px;
+    height: 60px;
+    display: inline-block;
+    overflow: hidden;
+    border-radius: 100px;
+    margin-top: 20px;
+}
+
+.post .pic img {
+    width: 100%;
+}
+
+.post form input {
+    width: 100%;
+    max-width: 100%;
+    min-height: 100px;
+    max-height: 300px;
+    border: none;
+    padding: 15px;
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    color: #565656;
+    box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.35);
+}
+
+.post form .post-footer {
+    padding: 20px 0;
+    border-bottom: 1px solid #c7c8ca;
+}
+
+.post form .like-type i {
+    color: #3d3c3c;
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.post form button {
+    border: 1px solid #316439;
+    padding: 5px 30px;
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to bottom, #659e6e 0%, #41864c 100%);
+    color: #fff;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.post form button:hover {
+    background: linear-gradient(to bottom, #41864c 100%,  #659e6e 0%);
+}

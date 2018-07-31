@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { PostsComponent } from './posts/posts.component';
@@ -19,6 +20,16 @@ import { FriendInfoComponent } from './friends/friend-info/friend-info.component
 import { UserSearcherComponent } from './users/user-searcher/user-searcher.component';
 import { HomeComponent } from './home/home.component';
 import { EventsComponent } from './events/events.component';
+
+import { UserService } from './users/shared/user.service';
+import { PostService } from './posts/shared/post.service';
+
+const appRoutes: Routes = [
+  { path: '', component: HomeComponent },
+  { path: 'home', component: HomeComponent },
+  { path: 'bio', component: BioComponent },
+  { path: 'friends', component: FriendsComponent },
+  { path: 'events',      component: EventsComponent }];
 
 @NgModule({
   declarations: [
@@ -42,9 +53,13 @@ import { EventsComponent } from './events/events.component';
     EventsComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot(appRoutes),
   ],
-  providers: [],
+  providers: [
+    UserService,
+    PostService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
