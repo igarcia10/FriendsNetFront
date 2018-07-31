@@ -1,4 +1,4 @@
 <div class="container">
-  <app-bio></app-bio>
+  <app-bio *ngIf="user" [user]="user"></app-bio>
   <app-post-list></app-post-list>
 </div>

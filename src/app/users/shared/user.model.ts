@@ -7,6 +7,7 @@ export class User {
     surname: string;
     picture: string;
     friends: Friend[];
+    bio: string;
 
     constructor() {}
 
