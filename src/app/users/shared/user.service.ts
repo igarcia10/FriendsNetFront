@@ -28,6 +28,8 @@ export class UserService {
     }
 
     putUser(user: User): Observable<User> {
-        return this.http.put<User>(this.URL_BASE, user, httpOptions);
+        const url = `${this.URL_BASE}/${user.id}`;
+
+        return this.http.put<User>(url, user, httpOptions);
     }
 }
