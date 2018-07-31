@@ -62,7 +62,7 @@
     {
       "id": 1,
       "text": "This is a Post",
-      "creationDate": "27/07/2018",
+      "creationDate": "2018-07-27T22:00:20.222Z",
       "type": 1,
       "picture": "",
       "likes": [
@@ -92,7 +92,7 @@
     {
       "id": 2,
       "text": "This is a Post",
-      "creationDate": "28/07/2018",
+      "creationDate": "2018-07-28T22:00:20.222Z",
       "type": 1,
       "picture": "",
       "likes": [
@@ -116,7 +116,7 @@
     {
       "id": 3,
       "text": "This is a Post",
-      "creationDate": "30/07/2018",
+      "creationDate": "2018-07-30T22:00:20.222Z",
       "type": 1,
       "picture": "",
       "likes": [
@@ -135,12 +135,11 @@
     {
       "id": 4,
       "text": "This is a Post",
-      "creationDate": "01/06/2018",
+      "creationDate": "2018-06-01T22:00:20.222Z",
       "type": 1,
       "picture": "",
-      "likes":[
-      ],
-      "user":  {
+      "likes": [],
+      "user": {
         "id": 4,
         "name": "Edu",
         "surname": "Agobiao",

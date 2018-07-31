@@ -10,11 +10,11 @@
         <p><span class="h6">{{post.user.name + ' ' + post.user.surname}}</span><br>{{post.text}}</p>
         <div class="post-footer d-flex justify-content-between">
           <div class="like-type">
-            <i class="fas fa-thumbs-up" [hidden]="post.likes.length <= 0"></i>
-            <span class="badge badge-pill badge-light" [hidden]="post.likes.length <= 0">{{post.likes.length}}</span>
+            <i class="fas fa-thumbs-up" *ngIf="post.likes" [hidden]="post.likes.length <= 0"></i>
+            <span class="badge badge-pill badge-light" *ngIf="post.likes" [hidden]="post.likes.length <= 0">{{post.likes.length}}</span>
           </div>
           <div class="date">
-            <span class="date">{{post.creationDate}}</span>
+            <span class="date">{{post.creationDate | date: 'dd/MM/yyyy'}}</span>
           </div>
           <div>
             <button type="submit">

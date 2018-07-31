@@ -13,7 +13,7 @@ export class PostListComponent implements OnInit {
 
   @Input() postListEnum: PostListEnum;
   @Input() user: User;
-  posts: Post[];
+  posts: Post[] = [];
 
   constructor(private userService: UserService,
     private postService: PostService) {
@@ -22,6 +22,7 @@ export class PostListComponent implements OnInit {
 
   ngOnInit() {
     this.getPosts();
+    //this.posts.sort((a, b) => new Date(a.creationDate).getTime() - new Date(b.creationDate).getTime());
   }
 
   getPosts() {
