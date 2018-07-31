@@ -1,0 +1,136 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Iván",
+      "surname": "García",
+      "picture": "",
+      "friends": [
+        {
+          "id": 2,
+          "name": "Teo",
+          "surname": "Ivanov",
+          "picture": ""
+        },
+        {
+          "id": 4,
+          "name": "Edu",
+          "surname": "Agobiao",
+          "picture": ""
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Teo",
+      "surname": "Ivanov",
+      "picture": "",
+      "friends": [
+        {
+          "id": 1,
+          "name": "Iván",
+          "surname": "García",
+          "picture": ""
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Fabián",
+      "surname": "Pérez",
+      "picture": "",
+      "friends": [
+        {}
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Edu",
+      "surname": "Agobiao",
+      "picture": "",
+      "friends": [
+        {
+          "id": 1,
+          "name": "Iván",
+          "surname": "García",
+          "picture": ""
+        }
+      ]
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "text": "This is a Post",
+      "creationDate": "27/07/2018",
+      "type": 1,
+      "picture": "",
+      "likes": [
+        {}
+      ],
+      "user": {
+        "id": 1,
+        "name": "Iván",
+        "surname": "García",
+        "picture": "",
+        "friends": [
+          {
+            "id": 2,
+            "name": "Teo",
+            "surname": "Ivanov",
+            "picture": ""
+          },
+          {
+            "id": 4,
+            "name": "Edu",
+            "surname": "Agobiao",
+            "picture": ""
+          }
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "text": "This is a Post",
+      "creationDate": "28/07/2018",
+      "type": 1,
+      "picture": "",
+      "likes": [
+        {}
+      ],
+      "user": {
+        "id": 2,
+        "name": "Teo",
+        "surname": "Ivanov",
+        "picture": "",
+        "friends": [
+          {
+            "id": 1,
+            "name": "Iván",
+            "surname": "García",
+            "picture": ""
+          }
+        ]
+      }
+    },
+    {
+      "id": 3,
+      "text": "This is a Post",
+      "creationDate": "30/07/2018",
+      "type": 1,
+      "picture": "",
+      "likes": [
+        {}
+      ],
+      "user": {
+        "id": 3,
+        "name": "Fabián",
+        "surname": "Pérez",
+        "picture": "",
+        "friends": [
+          {}
+        ]
+      }
+    }
+  ]
+}
