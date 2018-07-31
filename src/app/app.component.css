@@ -1,15 +1,10 @@
-body {
-    background-color: 	#cfcfcf;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 16px;
-}
-
 a {color: #4d6db3;}
 a:hover {text-decoration: underline;}
 
 /* HEADER */
 header {
     background-color: #4d6db3;
+    border-bottom: 1px solid #364d80;
     padding: 10px 0;
 }
 
@@ -28,7 +23,7 @@ header .search form input[type="text"] {
     height: 25px;
     line-height: 25px;
     border-radius: 3px 0 0 3px;
-    color: #6d6d6d;
+    color: #565656;
     font-family: 'Open Sans', sans-serif;
 }
 
