@@ -20,6 +20,7 @@ import { FriendInfoComponent } from './friends/friend-info/friend-info.component
 import { UserSearcherComponent } from './users/user-searcher/user-searcher.component';
 import { HomeComponent } from './home/home.component';
 import { EventsComponent } from './events/events.component';
+import { ProfileComponent } from './profile/profile.component';
 
 import { UserService } from './users/shared/user.service';
 import { PostService } from './posts/shared/post.service';
@@ -27,7 +28,7 @@ import { PostService } from './posts/shared/post.service';
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
-  { path: 'bio', component: BioComponent },
+  { path: 'profile', component: ProfileComponent },
   { path: 'friends', component: FriendsComponent },
   { path: 'events',      component: EventsComponent }];
 
@@ -50,7 +51,8 @@ const appRoutes: Routes = [
     FriendInfoComponent,
     UserSearcherComponent,
     HomeComponent,
-    EventsComponent
+    EventsComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
