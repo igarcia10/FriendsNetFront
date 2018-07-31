@@ -1,0 +1,4 @@
+enum PostListEnum {
+    Everyone,
+    UserOnly
+}

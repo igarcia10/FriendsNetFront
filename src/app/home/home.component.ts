@@ -10,6 +10,7 @@ import { User } from '../users/shared/user.model';
 export class HomeComponent implements OnInit {
 
   user: User;
+  postListEnum: PostListEnum = 1;
 
   constructor(private userService: UserService) {}
 
