@@ -12,7 +12,6 @@ export class UserHeaderComponent implements OnInit {
   user: User;
 
   constructor(private userService: UserService) {
-    this.user = new User();
   }
 
   ngOnInit() {
