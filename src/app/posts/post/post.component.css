@@ -2,6 +2,10 @@
     margin-bottom: 20px;
 }
 
+.post .h6 {
+    color: #316439;
+}
+
 .post .post-footer .date {
     color: #c7c8ca;
 }
