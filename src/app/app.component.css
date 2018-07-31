@@ -1,31 +1,73 @@
-.wrapper {
-    background-color: #e2e2e2;
-    height: 100vh;
+body {
+    background-color: 	#cfcfcf;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
 }
 
-.logo a img {
-    width: 30px;
-}
+a {color: #4d6db3;}
+a:hover {text-decoration: underline;}
 
-nav ul li {
-    list-style: none;
-    margin-right: 10px;
-}
-
+/* HEADER */
 header {
-    background-color: #e77a47;
+    background-color: #4d6db3;
+    padding: 10px 0;
 }
 
-header a {
-    padding: 18px 0;
-    color: white;
+/* LOGO */
+header .logo img {
+    height: 22px;
+}
+
+/* SEARCH */
+header .search form input[type="text"] {
+    width: 100%;
+    background: #fff;
+    border: none;
+    font-size: 12px;
+    padding: 0 10px;
+    height: 25px;
+    line-height: 25px;
+    border-radius: 3px 0 0 3px;
+    color: #6d6d6d;
+    font-family: 'Open Sans', sans-serif;
+}
+
+header .search form button {
+    width: 100%;
+    background-color: #f7f7f7;
+    border: none;
+    font-size: 12px;
+    padding: 0 10px;
+    height: 25px;
+    line-height: 25px;
+    border-radius: 0 3px 3px 0;
+    cursor: pointer;
+    color: #6d6d6d;
+}
+
+header .search form button:hover {
+    background: #ececec;
+}
+
+/* MENU */
+header .menu {
+    padding: 0;
+}
+
+header .menu a {
+    color: rgba(255,255,255,.8);
     text-decoration: none;
 }
 
-header ul li a:hover, .selected {
-    border-bottom: 3px solid #81ca78;
+header .menu a:hover {
+    color: #fff;
 }
 
-.btn-light {
-    border: 1px solid #b9b9b9;
+header .menu .image {
+    width: 22px;
+    height: 22px;
+}
+
+header .menu .image img {
+    border-radius: 100%;
 }
