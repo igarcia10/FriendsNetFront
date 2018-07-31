@@ -2,7 +2,13 @@
   <div class="col bio">
     <div class="row justify-content-center">
       <div class="col">
-        <p>{{user.bio}}</p>
+        <p (mouseenter)="switchEditable()" (mouseleave)="switchEditable()" *ngIf="!editMode">
+          <button class="btn btn-link float-right" (click)="switchMode()" *ngIf="editable">
+            <i class="fas fa-pen"></i>
+          </button>
+          {{user.bio}}
+        </p>
+        <textarea name="message" placeholder="Post a message..." (blur)="putBio()" [(ngModel)]="user.bio" *ngIf="editMode" [autofocus]="editMode"></textarea>
       </div>
     </div>
   </div>

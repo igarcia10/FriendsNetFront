@@ -22,7 +22,8 @@ export class PostListComponent implements OnInit {
 
   ngOnInit() {
     this.getPosts();
-    //this.posts.sort((a, b) => new Date(a.creationDate).getTime() - new Date(b.creationDate).getTime());
+    //TODO
+    this.posts.sort((a, b) => a.creationDate.getDate() - b.creationDate.getDate());
   }
 
   getPosts() {
