@@ -1,0 +1,3 @@
+{
+    "/posts/person/:id": "/posts?user.id=:id"
+  }

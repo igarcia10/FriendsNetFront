@@ -12,11 +12,12 @@ export class UserHeaderComponent implements OnInit {
   user: User;
 
   constructor(private userService: UserService) {
-    this.userService.getUserById(1)
-      .subscribe((data: User) => this.user = data);
-   }
+    this.user = new User();
+  }
 
   ngOnInit() {
+    this.userService.getUserById(1)
+      .subscribe((data: User) => this.user = data);
   }
 
 }

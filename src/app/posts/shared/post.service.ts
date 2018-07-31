@@ -22,7 +22,7 @@ export class PostService {
     }
 
     getPostsByPersonId(id: number): Observable<Post[]> {
-        const url = `${this.URL_BASE}/${id}`;
+        const url = `${this.URL_BASE}/person/${id}`;
         return this.http.get<Post[]>(url, httpOptions);
     }
 
