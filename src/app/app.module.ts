@@ -9,7 +9,6 @@ import { PostsComponent } from './posts/posts.component';
 import { PostComponent } from './posts/post/post.component';
 import { CreatePostComponent } from './posts/create-post/create-post.component';
 import { PostListComponent } from './posts/post-list/post-list.component';
-import { PostsByPersonComponent } from './posts/posts-by-person/posts-by-person.component';
 import { UsersComponent } from './users/users.component';
 import { BioComponent } from './users/bio/bio.component';
 import { UserInfoComponent } from './users/user-info/user-info.component';
@@ -42,7 +41,6 @@ const appRoutes: Routes = [
     PostComponent,
     CreatePostComponent,
     PostListComponent,
-    PostsByPersonComponent,
     UsersComponent,
     BioComponent,
     UserInfoComponent,

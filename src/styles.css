@@ -12,6 +12,33 @@ body {
     font-size: 16px;
 }
 
+.h5 {
+    color: #45854f;
+}
+
+.fn-container {
+    margin-bottom: 20px;
+}
+
+.pic {
+    padding-left: 15px;
+}
+
+.pic img {
+    width: 100%;
+}
+
+.pic span {
+    width: 60px;
+    height: 60px;
+    display: inline-block;
+    overflow: hidden;
+    border-radius: 100px;
+    margin-top: 10px;
+}
+
+/* USER */
+
 .user-list {
     margin-bottom: 20px;
     padding: 10px 25px;
@@ -19,4 +46,60 @@ body {
     height: 400px;
     max-height: 400px;
     overflow-y: auto;
+}
+
+/* POST */
+
+.post textarea, .post p, .friend {
+    width: 100%;
+    max-width: 100%;
+    min-height: 100px;
+    max-height: 300px;
+    border: none;
+    padding: 15px;
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    color: #565656;
+    background-color: #fff;
+    box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.35);
+}
+
+.post .post-footer {
+    padding: 20px 0;
+    border-bottom: 1px solid #c7c8ca;
+}
+
+.post .post-type i {
+    color: #3d3c3c;
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.post .post-footer .date {
+    color: #c7c8ca;
+}
+
+.post button {
+    border: 1px solid #316439;
+    padding: 5px 30px;
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to bottom, #659e6e 0%, #41864c 100%);
+    color: #fff;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.post button:hover {
+    background: linear-gradient(to bottom, #41864c 100%,  #659e6e 0%);
+}
+
+/* FRIEND */
+
+.friend button {
+    color: #e65656;
+}
+
+.friend button:hover {
+    color: #a73f3f;
 }
