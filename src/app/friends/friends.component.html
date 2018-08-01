@@ -1,11 +1,1 @@
-<div class="container">
-	<span class="h5" hidden>SEARCHING: </span>
-	<div class="row">
-		<div class="col-4">
-			<app-person-list *ngIf="user" [user]="user"></app-person-list>
-		</div>
-		<div class="col">
-			<app-person-info *ngIf="person" (select)="getPerson($event)" [person]="user"></app-person-info>
-		</div>
-	</div>
-</div>
+<app-person-info [user]="user"></app-person-info>

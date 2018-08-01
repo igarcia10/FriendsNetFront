@@ -1,23 +1,33 @@
-<div class="row">
-  <div class="col person fn-container">
-    <div class="row justify-content-center align-items-center" (mouseenter)="switchDeletable()" (mouseleave)="switchDeletable()">
-      <div class="col-auto pic">
-        <span>
-          <img src="../../../assets/img/profile1.jpg" alt="">
-        </span>
-      </div>
-      <div class="col">
-        <span class="h5">{{person.user.name + ' ' + person.user.surname}}</span>
-      </div>
-      <div class="unfriend">
-        <button class="btn btn-link float-right mr-3 unfriend" (click)="unfriend()" *ngIf="deletable && person.isFriend">
-          <i class="fas fa-times-circle fa-2x"></i>
-        </button>
-      </div>
-      <div class="add">
-        <button class="btn btn-link float-right mr-3 add" (click)="add()" *ngIf="deletable && !person.isFriend">
-          <i class="fas fa-plus-square fa-2x"></i>
-        </button>
+<div class="container">
+  <span class="h5" hidden>SEARCHING: </span>
+  <div class="row">
+    <div class="col-4">
+      <app-person-list *ngIf="user" [user]="user" (select)="getPerson($event)"></app-person-list>
+    </div>
+    <div class="col">
+      <div class="row">
+        <div class="col person fn-container" *ngIf="person">
+          <div class="row justify-content-center align-items-center" (mouseenter)="switchDeletable()" (mouseleave)="switchDeletable()">
+            <div class="col-auto pic">
+              <span>
+                <img src="../../../assets/img/profile1.jpg" alt="">
+              </span>
+            </div>
+            <div class="col">
+              <span class="h5">{{person.user.name + ' ' + person.user.surname}}</span>
+            </div>
+            <div class="unfriend">
+              <button class="btn btn-link float-right mr-3 unfriend" (click)="unfriend()" *ngIf="deletable && person.isFriend">
+                <i class="fas fa-times-circle fa-2x"></i>
+              </button>
+            </div>
+            <div class="add">
+              <button class="btn btn-link float-right mr-3 add" (click)="add()" *ngIf="deletable && !person.isFriend">
+                <i class="fas fa-plus-square fa-2x"></i>
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

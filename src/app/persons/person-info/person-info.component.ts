@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Person } from '../shared/person.model';
+import { User } from '../../users/shared/user.model';
 
 @Component({
   selector: 'app-person-info',
@@ -8,7 +9,8 @@ import { Person } from '../shared/person.model';
 })
 export class PersonInfoComponent implements OnInit {
 
-  @Input() person: Person;
+  @Input() user: User;
+  person: Person;
   deletable = false;
 
   constructor() { }
@@ -24,6 +26,10 @@ export class PersonInfoComponent implements OnInit {
 
   switchDeletable() {
     this.deletable = !this.deletable;
+  }
+
+  getPerson(person: Person) {
+    this.person = person;
   }
 
 }
