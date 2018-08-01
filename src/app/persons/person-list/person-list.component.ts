@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Person } from '../shared/person.model';
+import { User } from '../../users/shared/user.model';
 
 @Component({
   selector: 'app-person-list',
@@ -8,7 +9,9 @@ import { Person } from '../shared/person.model';
 })
 export class PersonListComponent implements OnInit {
 
-  @Input() persons: Person[];
+  @Input() user: User;
+  @Input() users?: User[];
+  persons: Person[];
 
   constructor() { }
 
