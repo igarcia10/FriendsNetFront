@@ -5,9 +5,7 @@
 			<app-person-list *ngIf="user" [user]="user"></app-person-list>
 		</div>
 		<div class="col">
-			<p>
-				INFO
-			</p>
+			<app-person-info *ngIf="person" (select)="getPerson($event)" [person]="user"></app-person-info>
 		</div>
 	</div>
 </div>

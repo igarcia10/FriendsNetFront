@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Person } from '../shared/person.model';
 
 @Component({
   selector: 'app-person-info',
@@ -7,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PersonInfoComponent implements OnInit {
 
+  @Input() person: Person;
+  deletable = false;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  unfriend() {
+  }
+
+  add() {
+  }
+
+  switchDeletable() {
+    this.deletable = !this.deletable;
   }
 
 }

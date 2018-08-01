@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Person } from '../shared/person.model';
 
 @Component({
@@ -9,6 +9,7 @@ import { Person } from '../shared/person.model';
 export class PersonComponent implements OnInit {
 
   @Input() person: Person;
+  @Output() select = new EventEmitter<Person>();
   deletable = false;
 
   constructor() { }
@@ -24,6 +25,10 @@ export class PersonComponent implements OnInit {
 
   switchDeletable() {
     this.deletable = !this.deletable;
+  }
+
+  selectPerson() {
+    this.select.emit(this.person);
   }
 
 }

@@ -1,5 +1,5 @@
 <div class="person-list">
   <div *ngFor="let person of persons">
-    <app-person [person]="person"></app-person>
+    <app-person [person]="person" (select)="selectPerson($event)"></app-person>
   </div>
 </div>

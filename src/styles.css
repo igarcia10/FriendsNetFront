@@ -104,6 +104,10 @@ body {
 
 /* PERSON */
 
+.person {
+    cursor: pointer;
+}
+
 .person .unfriend button {
     color: #e65656;
 }
