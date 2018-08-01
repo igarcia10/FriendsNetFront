@@ -14,15 +14,16 @@ export class FriendsComponent implements OnInit {
   text: string;
 
   constructor(private activatedRoute: ActivatedRoute,
-    private userService: UserService) { }
+              private userService: UserService) { }
 
   ngOnInit() {
     this.activatedRoute.params.subscribe((params: any) => {
-      if (params.text != undefined) {
+      if (params.text !== undefined) {
         this.activatedRoute.params
-          .subscribe(params =>{
-            this.text = params['text'];
-            this.users = this.userService.searchUsers(params['text']);});
+          .subscribe(data => {
+            this.text = data['text'];
+            this.users = this.userService.searchUsers(data['text']);
+          });
       }
     });
   }
