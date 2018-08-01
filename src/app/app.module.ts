@@ -11,10 +11,8 @@ import { CreatePostComponent } from './posts/create-post/create-post.component';
 import { PostListComponent } from './posts/post-list/post-list.component';
 import { UsersComponent } from './users/users.component';
 import { BioComponent } from './users/bio/bio.component';
-import { UserInfoComponent } from './users/user-info/user-info.component';
 import { UserHeaderComponent } from './users/user-header/user-header.component';
 import { FriendsComponent } from './friends/friends.component';
-import { FriendInfoComponent } from './friends/friend-info/friend-info.component';
 import { HomeComponent } from './home/home.component';
 import { EventsComponent } from './events/events.component';
 import { ProfileComponent } from './profile/profile.component';
@@ -22,10 +20,11 @@ import { PersonsComponent } from './persons/persons.component';
 import { PersonComponent } from './persons/person/person.component';
 import { PersonListComponent } from './persons/person-list/person-list.component';
 import { UserSearcherComponent } from './users/user-searcher/user-searcher.component';
+import { HeaderComponent } from './header/header.component';
 
 import { UserService } from './users/shared/user.service';
 import { PostService } from './posts/shared/post.service';
-import { HeaderComponent } from './header/header.component';
+import { PersonInfoComponent } from './persons/person-info/person-info.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -44,10 +43,8 @@ const appRoutes: Routes = [
     PostListComponent,
     UsersComponent,
     BioComponent,
-    UserInfoComponent,
     UserHeaderComponent,
     FriendsComponent,
-    FriendInfoComponent,
     HomeComponent,
     EventsComponent,
     ProfileComponent,
@@ -55,7 +52,8 @@ const appRoutes: Routes = [
     PersonComponent,
     PersonListComponent,
     UserSearcherComponent,
-    HeaderComponent
+    HeaderComponent,
+    PersonInfoComponent
   ],
   imports: [
     BrowserModule,
