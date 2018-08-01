@@ -38,6 +38,8 @@ export class UserService {
     }
 
     searchUsers(text: string): User[] {
-        return this.users.filter(item => item.name.toLowerCase().includes(text.toLowerCase()));
+        return this.users.filter(item =>
+             item.name.toLowerCase().includes(text.toLowerCase())
+            || item.surname.toLowerCase().includes(text.toLowerCase()));
     }
 }

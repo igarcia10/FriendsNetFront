@@ -11,6 +11,7 @@ import { UserService } from '../users/shared/user.service';
 export class FriendsComponent implements OnInit {
 
   users: User[] = [];
+  text: string;
 
   constructor(private activatedRoute: ActivatedRoute,
     private userService: UserService) { }
@@ -19,7 +20,9 @@ export class FriendsComponent implements OnInit {
     this.activatedRoute.params.subscribe((params: any) => {
       if (params.text != undefined) {
         this.activatedRoute.params
-          .subscribe(params => this.users = this.userService.searchUsers(params['text']));
+          .subscribe(params =>{
+            this.text = params['text'];
+            this.users = this.userService.searchUsers(params['text']);});
       }
     });
   }

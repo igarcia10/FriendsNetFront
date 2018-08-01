@@ -8,7 +8,7 @@
     <div class="col">
       <app-post-list *ngIf="user" [user]="user"></app-post-list>
     </div>
-    <div class="col-4" *ngIf="user">
+    <div class="col-4 user-list" *ngIf="user">
       <div *ngFor="let friend of user.friends">
         <app-friend [user]="friend"></app-friend>
       </div>

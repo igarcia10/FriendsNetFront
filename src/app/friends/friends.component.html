@@ -1,12 +1,15 @@
 <div class="container">
-    <div class="row">
-        <div class="col">
-            <p>
-                {{users.length}}
-            </p>
-        </div>
-        <div class="col-4">
-            <app-friend></app-friend>
-        </div>
-    </div>
+	<span class="h5" *ngIf="text">SEARCHING: {{text}}</span>
+	<div class="row">
+		<div class="col-4 user-list">
+			<div *ngFor="let user of users">
+				<app-friend [user]="user"></app-friend>
+			</div>
+		</div>
+		<div class="col">
+			<p>
+				INFO
+			</p>
+		</div>
+	</div>
 </div>
