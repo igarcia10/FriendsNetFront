@@ -10,6 +10,7 @@ body {
     background-color: 	#ebebeb;
     font-family: 'Open Sans', sans-serif;
     font-size: 16px;
+    overflow: scroll;
 }
 
 .h5 {
@@ -37,20 +38,7 @@ body {
     margin-top: 10px;
 }
 
-/* USER */
-
-.user-list {
-    margin-bottom: 20px;
-    padding: 10px 25px;
-    background-color: #c0c0c0;
-    height: 400px;
-    max-height: 400px;
-    overflow-y: auto;
-}
-
-/* POST */
-
-.post textarea, .post p, .friend {
+.post textarea, .post p, .friend, .bio p, .bio textarea {
     width: 100%;
     max-width: 100%;
     min-height: 100px;
@@ -63,6 +51,27 @@ body {
     background-color: #fff;
     box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.35);
 }
+
+/* USER */
+
+.user-list {
+    margin-bottom: 20px;
+    padding: 10px 25px;
+    background-color: #c0c0c0;
+    height: 400px;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.bio button {
+    color: #69ca60;
+}
+
+.bio button:hover {
+    color: #63a85d;
+}
+
+/* POST */
 
 .post .post-footer {
     padding: 20px 0;

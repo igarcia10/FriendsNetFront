@@ -18,7 +18,6 @@ import { FriendsComponent } from './friends/friends.component';
 import { FriendComponent } from './friends/friend/friend.component';
 import { FriendListComponent } from './friends/friend-list/friend-list.component';
 import { FriendInfoComponent } from './friends/friend-info/friend-info.component';
-import { UserSearcherComponent } from './users/user-searcher/user-searcher.component';
 import { HomeComponent } from './home/home.component';
 import { EventsComponent } from './events/events.component';
 import { ProfileComponent } from './profile/profile.component';
@@ -50,7 +49,6 @@ const appRoutes: Routes = [
     FriendComponent,
     FriendListComponent,
     FriendInfoComponent,
-    UserSearcherComponent,
     HomeComponent,
     EventsComponent,
     ProfileComponent
