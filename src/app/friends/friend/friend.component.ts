@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { User } from '../../users/shared/user.model';
 
 @Component({
   selector: 'app-friend',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FriendComponent implements OnInit {
 
+  @Input() user: User;
   deletable = false;
 
   constructor() { }

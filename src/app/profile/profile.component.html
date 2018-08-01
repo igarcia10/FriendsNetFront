@@ -1,4 +1,17 @@
 <div class="container">
-  <app-bio *ngIf="user" [user]="user"></app-bio>
-  <app-post-list *ngIf="user" [user]="user"></app-post-list>
+  <div class="row">
+    <div class="col">
+      <app-bio *ngIf="user" [user]="user"></app-bio>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <app-post-list *ngIf="user" [user]="user"></app-post-list>
+    </div>
+    <div class="col-4" *ngIf="user">
+      <div *ngFor="let friend of user.friends">
+        <app-friend [user]="friend"></app-friend>
+      </div>
+    </div>
+  </div>
 </div>
