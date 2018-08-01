@@ -1,3 +1,17 @@
-<p>
-  friend works!
-</p>
+<div class="row">
+  <div class="col friend">
+    <div class="row justify-content-center align-items-center" (mouseenter)="switchDeletable()" (mouseleave)="switchDeletable()">
+      <div class="col-auto pic">
+        <span>
+          <img src="../../../assets/img/profile1.jpg" alt="">
+        </span>
+      </div>
+      <div class="col">
+        <span class="h5">Teo Ivanov</span>
+      </div>
+      <button class="btn btn-link float-right mr-3" (click)="unfriend()" *ngIf="deletable">
+        <i class="fas fa-times-circle fa-2x"></i>
+      </button>
+    </div>
+  </div>
+</div>

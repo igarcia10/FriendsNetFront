@@ -2,12 +2,12 @@
   <div class="col post">
     <div class="row justify-content-center">
       <div class="col-auto pic">
-        <a href="#">
+        <span>
           <img src="../../../assets/img/profile1.jpg" alt="">
-        </a>
+        </span>
       </div>
       <div class="col">
-        <p><span class="h6">{{post.user.name + ' ' + post.user.surname}}</span><br>{{post.text}}</p>
+        <p><span class="h5">{{post.user.name + ' ' + post.user.surname}}</span><br>{{post.text}}</p>
         <div class="post-footer d-flex justify-content-between">
           <div class="like-type">
             <i class="fas fa-thumbs-up" *ngIf="post.likes" [hidden]="post.likes.length <= 0"></i>

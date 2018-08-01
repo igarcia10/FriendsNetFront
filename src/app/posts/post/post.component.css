@@ -2,8 +2,8 @@
     margin-bottom: 20px;
 }
 
-.post .h6 {
-    color: #316439;
+.post .h5 {
+    color: #45854f;
 }
 
 .post .post-footer .date {
@@ -14,7 +14,7 @@
     padding-left: 15px;
 }
 
-.post .pic a {
+.post .pic span {
     width: 60px;
     height: 60px;
     display: inline-block;

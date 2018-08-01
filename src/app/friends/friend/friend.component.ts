@@ -7,9 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FriendComponent implements OnInit {
 
+  deletable = false;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  unfriend() {
+
+  }
+
+  switchDeletable() {
+    this.deletable = !this.deletable;
   }
 
 }

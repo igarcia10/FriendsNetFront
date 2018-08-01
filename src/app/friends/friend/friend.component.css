@@ -1,0 +1,46 @@
+.friend {
+    margin-bottom: 20px;
+}
+
+.h5 {
+    color: #45854f;
+}
+
+.friend .pic {
+    padding-left: 15px;
+}
+
+.friend .pic span {
+    width: 60px;
+    height: 60px;
+    display: inline-block;
+    overflow: hidden;
+    border-radius: 100px;
+    margin-top: 10px;
+}
+
+.friend .pic img {
+    width: 100%;
+}
+
+.friend {
+    width: 100%;
+    max-width: 100%;
+    min-height: 100px;
+    max-height: 300px;
+    border: none;
+    padding: 15px;
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    color: #565656;
+    background-color: #fff;
+    box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.35);
+}
+
+button {
+    color: #e65656;
+}
+
+button:hover {
+    color: #a73f3f;
+}

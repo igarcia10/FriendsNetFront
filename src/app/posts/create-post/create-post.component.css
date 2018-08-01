@@ -6,7 +6,7 @@
     padding-left: 15px;
 }
 
-.post .pic a {
+.post .pic span {
     width: 60px;
     height: 60px;
     display: inline-block;
