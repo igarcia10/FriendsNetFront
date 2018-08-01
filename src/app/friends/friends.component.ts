@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { User } from '../users/shared/user.model';
 import { ActivatedRoute } from '../../../node_modules/@angular/router';
 import { UserService } from '../users/shared/user.service';
+import { Person } from '../persons/shared/person.model';
 
 @Component({
   selector: 'app-friends',
@@ -12,6 +13,7 @@ export class FriendsComponent implements OnInit {
 
   users: User[] = [];
   text: string;
+  persons: Person[];
 
   constructor(private activatedRoute: ActivatedRoute,
               private userService: UserService) { }

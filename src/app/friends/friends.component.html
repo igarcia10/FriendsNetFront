@@ -1,10 +1,8 @@
 <div class="container">
 	<span class="h5" *ngIf="text">SEARCHING: {{text}}</span>
 	<div class="row">
-		<div class="col-4 user-list">
-			<div *ngFor="let user of users">
-				<app-friend [user]="user"></app-friend>
-			</div>
+		<div class="col-4">
+			<app-person-list [persons]="persons"></app-person-list>
 		</div>
 		<div class="col">
 			<p>

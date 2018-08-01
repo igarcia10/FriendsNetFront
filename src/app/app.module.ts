@@ -12,11 +12,8 @@ import { PostListComponent } from './posts/post-list/post-list.component';
 import { UsersComponent } from './users/users.component';
 import { BioComponent } from './users/bio/bio.component';
 import { UserInfoComponent } from './users/user-info/user-info.component';
-import { UserListComponent } from './users/user-list/user-list.component';
 import { UserHeaderComponent } from './users/user-header/user-header.component';
 import { FriendsComponent } from './friends/friends.component';
-import { FriendComponent } from './friends/friend/friend.component';
-import { FriendListComponent } from './friends/friend-list/friend-list.component';
 import { FriendInfoComponent } from './friends/friend-info/friend-info.component';
 import { HomeComponent } from './home/home.component';
 import { EventsComponent } from './events/events.component';
@@ -46,11 +43,8 @@ const appRoutes: Routes = [
     UsersComponent,
     BioComponent,
     UserInfoComponent,
-    UserListComponent,
     UserHeaderComponent,
     FriendsComponent,
-    FriendComponent,
-    FriendListComponent,
     FriendInfoComponent,
     HomeComponent,
     EventsComponent,

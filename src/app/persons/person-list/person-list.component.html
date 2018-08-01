@@ -1,3 +1,5 @@
-<p>
-  person-list works!
-</p>
+<div class="user-list">
+  <div *ngFor="let person of persons">
+    <app-person [person]="person"></app-person>
+  </div>
+</div>
