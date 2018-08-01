@@ -11,21 +11,12 @@ import { UserService } from '../users/shared/user.service';
 export class FriendsComponent implements OnInit {
 
   user: User;
-  users: User[] = [];
-  text: string;
 
-  constructor(private activatedRoute: ActivatedRoute,
-              private userService: UserService) { }
+  constructor(private userService: UserService) { }
 
   ngOnInit() {
     this.userService.getUserById(1)
       .subscribe((data: User) => this.user = data);
-    this.activatedRoute.params.subscribe((params: any) => {
-      if (params.text !== undefined) {
-            this.text = params.text;
-            this.users = this.userService.searchUsers(params.text);
-      }
-    });
   }
 
 }

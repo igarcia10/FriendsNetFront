@@ -18,19 +18,20 @@ import { FriendInfoComponent } from './friends/friend-info/friend-info.component
 import { HomeComponent } from './home/home.component';
 import { EventsComponent } from './events/events.component';
 import { ProfileComponent } from './profile/profile.component';
-
-import { UserService } from './users/shared/user.service';
-import { PostService } from './posts/shared/post.service';
 import { PersonsComponent } from './persons/persons.component';
 import { PersonComponent } from './persons/person/person.component';
 import { PersonListComponent } from './persons/person-list/person-list.component';
+import { UserSearcherComponent } from './users/user-searcher/user-searcher.component';
+
+import { UserService } from './users/shared/user.service';
+import { PostService } from './posts/shared/post.service';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
   { path: 'profile', component: ProfileComponent },
   { path: 'friends', component: FriendsComponent },
-  { path: 'friends/:text', component: FriendsComponent },
+  { path: 'friends/:text', component: UserSearcherComponent },
   { path: 'events',      component: EventsComponent }];
 
 @NgModule({
@@ -51,7 +52,8 @@ const appRoutes: Routes = [
     ProfileComponent,
     PersonsComponent,
     PersonComponent,
-    PersonListComponent
+    PersonListComponent,
+    UserSearcherComponent
   ],
   imports: [
     BrowserModule,
