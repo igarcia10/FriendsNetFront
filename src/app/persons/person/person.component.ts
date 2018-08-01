@@ -17,7 +17,9 @@ export class PersonComponent implements OnInit {
   }
 
   unfriend() {
+  }
 
+  add() {
   }
 
   switchDeletable() {

@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col friend fn-container">
+  <div class="col person fn-container">
     <div class="row justify-content-center align-items-center" (mouseenter)="switchDeletable()" (mouseleave)="switchDeletable()">
       <div class="col-auto pic">
         <span>
@@ -9,9 +9,16 @@
       <div class="col">
         <span class="h5">{{person.user.name + ' ' + person.user.surname}}</span>
       </div>
-      <button class="btn btn-link float-right mr-3" (click)="unfriend()" *ngIf="deletable">
-        <i class="fas fa-times-circle fa-2x"></i>
-      </button>
+      <div class="unfriend">
+        <button class="btn btn-link float-right mr-3 unfriend" (click)="unfriend()" *ngIf="deletable && person.isFriend">
+          <i class="fas fa-times-circle fa-2x"></i>
+        </button>
+      </div>
+      <div class="add">
+        <button class="btn btn-link float-right mr-3 add" (click)="add()" *ngIf="deletable && !person.isFriend">
+          <i class="fas fa-plus-square fa-2x"></i>
+        </button>
+      </div>
     </div>
   </div>
 </div>

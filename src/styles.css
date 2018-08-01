@@ -38,7 +38,7 @@ body {
     margin-top: 10px;
 }
 
-.post textarea, .post p, .friend, .bio p, .bio textarea {
+.post textarea, .post p, .person, .bio p, .bio textarea {
     width: 100%;
     max-width: 100%;
     min-height: 100px;
@@ -102,12 +102,20 @@ body {
     background: linear-gradient(to bottom, #41864c 100%,  #659e6e 0%);
 }
 
-/* FRIEND */
+/* PERSON */
 
-.friend button {
+.person .unfriend button {
     color: #e65656;
 }
 
-.friend button:hover {
+.person .unfriend button:hover {
     color: #a73f3f;
+}
+
+.person .add button {
+    color: #659e6e;
+}
+
+.person .add button:hover {
+    color: #41864c;
 }
