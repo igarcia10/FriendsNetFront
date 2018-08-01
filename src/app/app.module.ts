@@ -24,6 +24,9 @@ import { ProfileComponent } from './profile/profile.component';
 
 import { UserService } from './users/shared/user.service';
 import { PostService } from './posts/shared/post.service';
+import { PersonsComponent } from './persons/persons.component';
+import { PersonComponent } from './persons/person/person.component';
+import { PersonListComponent } from './persons/person-list/person-list.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -51,7 +54,10 @@ const appRoutes: Routes = [
     FriendInfoComponent,
     HomeComponent,
     EventsComponent,
-    ProfileComponent
+    ProfileComponent,
+    PersonsComponent,
+    PersonComponent,
+    PersonListComponent
   ],
   imports: [
     BrowserModule,

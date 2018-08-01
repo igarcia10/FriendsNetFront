@@ -7,7 +7,7 @@
         </span>
       </div>
       <div class="col">
-        <span class="h5">{{user.name + ' ' + user.surname}}</span>
+        <span class="h5">{{person.user.name + ' ' + person.user.surname}}</span>
       </div>
       <button class="btn btn-link float-right mr-3" (click)="unfriend()" *ngIf="deletable">
         <i class="fas fa-times-circle fa-2x"></i>
