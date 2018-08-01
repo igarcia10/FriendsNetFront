@@ -23,12 +23,14 @@ export class CreatePostComponent implements OnInit {
   }
 
   addPost() {
-    this.post.user = this.user;
-    this.post.likes = null;
-    this.post.creationDate = new Date();
-    this.postService.postPost(this.post)
-      .subscribe((data: Post) => this.posts.push(data));
-    this.post = new Post();
+    if (this.post.text) {
+      this.post.user = this.user;
+      this.post.likes = null;
+      this.post.creationDate = new Date();
+      this.postService.postPost(this.post)
+        .subscribe((data: Post) => this.posts.push(data));
+      this.post = new Post();
+    }
   }
 
 }

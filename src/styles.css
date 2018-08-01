@@ -64,11 +64,11 @@ body {
 }
 
 .bio button {
-    color: #69ca60;
+    color: #659e6e;
 }
 
 .bio button:hover {
-    color: #63a85d;
+    color: #41864c;
 }
 
 /* POST */
@@ -96,7 +96,6 @@ body {
     background: linear-gradient(to bottom, #659e6e 0%, #41864c 100%);
     color: #fff;
     border-radius: 3px;
-    cursor: pointer;
 }
 
 .post button:hover {

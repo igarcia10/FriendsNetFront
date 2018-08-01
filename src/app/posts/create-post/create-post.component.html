@@ -14,7 +14,7 @@
               <i class="fas fa-user-alt"></i>
             </div>
             <div>
-              <button (click)="addPost()">Post</button>
+              <button class="btn" (click)="addPost()" [class.disabled]="!post.text" [disabled]="!post.text">Post</button>
             </div>
           </div>
         </form>
