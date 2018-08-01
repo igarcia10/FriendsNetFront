@@ -25,6 +25,7 @@ import { UserSearcherComponent } from './users/user-searcher/user-searcher.compo
 
 import { UserService } from './users/shared/user.service';
 import { PostService } from './posts/shared/post.service';
+import { HeaderComponent } from './header/header.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -53,7 +54,8 @@ const appRoutes: Routes = [
     PersonsComponent,
     PersonComponent,
     PersonListComponent,
-    UserSearcherComponent
+    UserSearcherComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
