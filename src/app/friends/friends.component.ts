@@ -22,11 +22,8 @@ export class FriendsComponent implements OnInit {
       .subscribe((data: User) => this.user = data);
     this.activatedRoute.params.subscribe((params: any) => {
       if (params.text !== undefined) {
-        this.activatedRoute.params
-          .subscribe(data => {
-            this.text = data['text'];
-            this.users = this.userService.searchUsers(data['text']);
-          });
+            this.text = params.text;
+            this.users = this.userService.searchUsers(params.text);
       }
     });
   }

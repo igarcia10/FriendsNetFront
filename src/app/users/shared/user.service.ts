@@ -17,7 +17,7 @@ export class UserService {
 
     users: User[] = [];
 
-    constructor(private http: HttpClient) { 
+    constructor(private http: HttpClient) {
         this.getUsers().subscribe((data: User[]) => this.users = data);
     }
 

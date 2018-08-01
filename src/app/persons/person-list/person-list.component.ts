@@ -32,7 +32,6 @@ export class PersonListComponent implements OnInit {
           p.isFriend = false;
         }
         this.persons.push(p);
-        console.log('in');
       } );
     }
   }
