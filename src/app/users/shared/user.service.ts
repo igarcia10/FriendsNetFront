@@ -5,7 +5,7 @@ import { User } from './user.model';
 
 const httpOptions = {
     headers: new HttpHeaders({
-        'Content-Type':  'application/json',
+        'Content-Type': 'application/json',
         'Authorization': 'my-auth-token'
     })
 };
@@ -15,7 +15,11 @@ export class UserService {
 
     URL_BASE = 'http://localhost:3000/users';
 
-    constructor(private http: HttpClient) { }
+    users: User[] = [];
+
+    constructor(private http: HttpClient) { 
+        this.getUsers().subscribe((data: User[]) => this.users = data);
+    }
 
     getUsers(): Observable<User[]> {
         return this.http.get<User[]>(this.URL_BASE);
@@ -31,5 +35,9 @@ export class UserService {
         const url = `${this.URL_BASE}/${user.id}`;
 
         return this.http.put<User>(url, user, httpOptions);
+    }
+
+    searchUsers(text: string): User[] {
+        return this.users.filter(item => item.name.toLowerCase().includes(text.toLowerCase()));
     }
 }

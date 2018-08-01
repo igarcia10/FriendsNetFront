@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from '../users/shared/user.model';
+import { ActivatedRoute } from '../../../node_modules/@angular/router';
+import { UserService } from '../users/shared/user.service';
 
 @Component({
   selector: 'app-friends',
@@ -7,9 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FriendsComponent implements OnInit {
 
-  constructor() { }
+  users: User[] = [];
+
+  constructor(private activatedRoute: ActivatedRoute,
+              private userService: UserService) { }
 
   ngOnInit() {
+    this.activatedRoute.params
+      .subscribe(params => this.users = this.userService.searchUsers(params['text']));
   }
 
 }

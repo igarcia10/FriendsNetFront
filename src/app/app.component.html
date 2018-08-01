@@ -13,10 +13,10 @@
           <form>
             <div class="row no-gutters align-items-center">
               <div class="column col-10">
-                <input type="text" placeholder="Search...">
+                <input type="text" placeholder="Search..." #searchText (keyup.enter)="searchUser(searchText.value)">
               </div>
               <div class="column col-2">
-                <button type="button">
+                <button type="button" (click)="searchUser(searchText.value)">
                   <i class="fa fa-search"></i>
                 </button>
               </div>
