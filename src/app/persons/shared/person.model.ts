@@ -1,4 +1,5 @@
-import { User } from './user.model';
+import { User } from '../../users/shared/user.model';
+
 
 export class Person {
     user: User;

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, SimpleChanges, SimpleChange } from '@angular/core';
 import { Person } from '../shared/person.model';
 import { User } from '../../users/shared/user.model';
 
@@ -7,7 +7,7 @@ import { User } from '../../users/shared/user.model';
   templateUrl: './person-list.component.html',
   styleUrls: ['./person-list.component.css']
 })
-export class PersonListComponent implements OnInit {
+export class PersonListComponent implements OnChanges, OnInit {
 
   @Input() user: User;
   @Input() users?: User[];
@@ -15,9 +15,13 @@ export class PersonListComponent implements OnInit {
 
   constructor() { }
 
+  ngOnChanges(changes: SimpleChanges) {
+    this.users = changes.users.currentValue;
+  }
+
   ngOnInit() {
     if (!this.users) {
-      this.user.friends.forEach(friend => {
+      this.user.friends.forEach((friend: any) => {
         const p = new Person();
         p.user = friend;
         p.isFriend = true;
