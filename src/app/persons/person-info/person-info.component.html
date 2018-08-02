@@ -2,16 +2,16 @@
   <div class="container-header">
     <div class="row">
       <div class="col-4">
-        <span class="h5" [hidden]="text.length <= 0">SEARCHING: {{text}}</span>
+        <span class="h5">SEARCHING: <span [hidden]="text.length <= 0">{{text}}</span></span>
       </div>
       <div class="col order-3 order-sm-0 search">
           <form>
             <div class="row no-gutters align-items-center">
               <div class="column col-10">
-                <input type="text" placeholder="Search..." #searchText (keyup.enter)="searchUser(searchText.value)">
+                <input type="text" name="search" placeholder="Search..." [(ngModel)]="text" (keyup.enter)="searchUser()">
               </div>
               <div class="column col-2">
-                <button type="button" (click)="searchUser(searchText.value)">
+                <button type="button" (click)="searchUser()">
                   <i class="fa fa-search"></i>
                 </button>
               </div>
@@ -22,7 +22,7 @@
   </div>
   <div class="row">
     <div class="col-4">
-      <app-person-list *ngIf="user" [user]="user" (select)="getPerson($event)"></app-person-list>
+      <app-person-list *ngIf="persons" [persons]="persons" (select)="getPerson($event)"></app-person-list>
     </div>
     <div class="col">
       <div class="row">
