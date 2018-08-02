@@ -36,16 +36,6 @@
 								<div class="friend-footer">Friend</div>
 							</div>
 						</div>
-						<div class="unfriend">
-							<button class="btn btn-link float-right mr-3 unfriend" (click)="unfriend()" *ngIf="deletable && person.isFriend">
-								<i class="fas fa-times-circle fa-2x"></i>
-							</button>
-						</div>
-						<div class="add">
-							<button class="btn btn-link float-right mr-3 add" (click)="add()" *ngIf="deletable && !person.isFriend">
-								<i class="fas fa-plus-square fa-2x"></i>
-							</button>
-						</div>
 					</div>
 				</div>
 			</div>

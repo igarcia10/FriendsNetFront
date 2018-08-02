@@ -16,7 +16,6 @@ import { FriendsComponent } from './friends/friends.component';
 import { HomeComponent } from './home/home.component';
 import { EventsComponent } from './events/events.component';
 import { ProfileComponent } from './profile/profile.component';
-import { PersonsComponent } from './persons/persons.component';
 import { PersonComponent } from './persons/person/person.component';
 import { PersonListComponent } from './persons/person-list/person-list.component';
 import { HeaderComponent } from './header/header.component';
@@ -46,7 +45,6 @@ const appRoutes: Routes = [
     HomeComponent,
     EventsComponent,
     ProfileComponent,
-    PersonsComponent,
     PersonComponent,
     PersonListComponent,
     HeaderComponent
