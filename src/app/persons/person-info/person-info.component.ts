@@ -12,6 +12,7 @@ export class PersonInfoComponent implements OnInit {
   @Input() user: User;
   person: Person;
   deletable = false;
+  text = 'hola';
 
   constructor() { }
 
@@ -30,6 +31,10 @@ export class PersonInfoComponent implements OnInit {
 
   getPerson(person: Person) {
     this.person = person;
+  }
+
+  searchUser(text: string) {
+
   }
 
 }
