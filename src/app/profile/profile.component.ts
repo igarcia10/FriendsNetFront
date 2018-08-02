@@ -44,4 +44,8 @@ export class ProfileComponent implements OnInit {
     });
   }
 
+  removePost(post: Post) {
+    this.posts.slice(this.posts.indexOf(post), 1);
+  }
+
 }

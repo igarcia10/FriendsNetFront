@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Post } from '../shared/post.model';
 import { Like } from '../shared/like.model';
 import { User } from '../../users/shared/user.model';
@@ -13,6 +13,7 @@ export class PostComponent implements OnInit {
 
   @Input() post: Post;
   @Input() user: User;
+  @Output() remove = new EventEmitter<Post>();
   coolLikes = 0;
   userCoolLike = false;
   dontcareLikes = 0;
@@ -122,6 +123,11 @@ export class PostComponent implements OnInit {
           break;
         }
     }
+  }
+
+  removePost() {
+    this.postService.removePost(this.post.id);
+    this.remove.emit(this.post);
   }
 
 }

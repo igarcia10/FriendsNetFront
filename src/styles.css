@@ -58,19 +58,31 @@ body {
 
 /* USER */
 
-.bio button, .post button {
+.bio button, .post-footer button, .post p button {
     color: #659e6e;
 }
 
-.bio button:hover, .post button:hover {
+.bio button:hover, .post-footer button:hover, .post p button:hover {
     color: #41864c;
 }
 
 /* POST */
 
 .post .post-footer {
+    padding-bottom: 20px;
+    border-bottom: 1px solid #c7c8ca;
+    margin-bottom: 20px;
+}
+
+.create-post-footer {
     padding: 20px 0;
     border-bottom: 1px solid #c7c8ca;
+    margin-bottom: 20px;
+}
+
+.post-footer button {
+    margin: 0 5px;
+    padding: 0;
 }
 
 .post .post-type i {
@@ -79,12 +91,8 @@ body {
     margin-right: 10px;
 }
 
-.post button {
-    margin: 0 5px;
-    padding: 0;
-}
 
-.create-post button {
+.create-post-footer button {
     border: 1px solid #316439;
     padding: 5px 30px;
     font-size: 14px;
@@ -94,8 +102,13 @@ body {
     border-radius: 3px;
 }
 
-.create-post button:hover {
+.create-post-footer button:hover {
     background: linear-gradient(to bottom, #41864c 100%,  #659e6e 0%);
+}
+
+.post p button {
+    padding: 0;
+    margin: 0;
 }
 
 /* PERSON */

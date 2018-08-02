@@ -8,6 +8,9 @@
       </div>
       <div class="col">
         <p>
+          <button class="btn btn-link float-right" (click)="removePost()">
+            <i class="fas fa-times" [hidden]="post.user.id !== user.id"></i>
+          </button>
           <span class="h5">{{post.user.name + ' ' + post.user.surname}}</span>
           <br>{{post.text}}</p>
         <div class="post-footer d-flex justify-content-between">

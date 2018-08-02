@@ -35,4 +35,9 @@ export class PostService {
 
         return this.http.post<Post>(url, httpOptions);
     }
+
+    removePost(id: number) {
+        const url = `${this.URL_BASE}/${id}`;
+        this.http.delete(url, httpOptions);
+    }
 }
