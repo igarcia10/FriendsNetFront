@@ -14,23 +14,23 @@
           <div class="likes d-flex flex-row">
             <div class="cool-like">
               <button class="btn btn-link">
-                <i class="far fa-thumbs-up" *ngIf="post.likes" [hidden]="post.likes.length > 0"></i>
-                <i class="fas fa-thumbs-up" *ngIf="post.likes" [hidden]="post.likes.length <= 0"></i>
-                <span class="badge badge-pill badge-light" *ngIf="post.likes" [hidden]="post.likes.length <= 0">{{post.likes.length}}</span>
+                <i class="far fa-thumbs-up" *ngIf="post.likes" [hidden]="userCoolLike"></i>
+                <i class="fas fa-thumbs-up" *ngIf="post.likes" [hidden]="!userCoolLike"></i>
+                <span class="badge badge-pill badge-light" *ngIf="post.likes" [hidden]="coolLikes <= 0">{{coolLikes}}</span>
               </button>
             </div>
             <div class="dontcare-like">
               <button class="btn btn-link">
-                <i class="far fa-meh" *ngIf="post.likes" [hidden]="post.likes.length > 0"></i>
-                <i class="fas fa-meh" *ngIf="post.likes" [hidden]="post.likes.length <= 0"></i>
-                <span class="badge badge-pill badge-light" *ngIf="post.likes" [hidden]="post.likes.length <= 0">{{post.likes.length}}</span>
+                <i class="far fa-meh" *ngIf="post.likes" [hidden]="userDontcareLike"></i>
+                <i class="fas fa-meh" *ngIf="post.likes" [hidden]="!userDontcareLike"></i>
+                <span class="badge badge-pill badge-light" *ngIf="post.likes" [hidden]="dontcareLikes <= 0">{{dontcareLikes}}</span>
               </button>
             </div>
             <div class="arg-like">
               <button class="btn btn-link">
-                <i class="far fa-angry" *ngIf="post.likes" [hidden]="post.likes.length > 0"></i>
-                <i class="fas fa-angry" *ngIf="post.likes" [hidden]="post.likes.length <= 0"></i>
-                <span class="badge badge-pill badge-light" *ngIf="post.likes" [hidden]="post.likes.length <= 0">{{post.likes.length}}</span>
+                <i class="far fa-angry" *ngIf="post.likes" [hidden]="userArgLike"></i>
+                <i class="fas fa-angry" *ngIf="post.likes" [hidden]="!userArgLike"></i>
+                <span class="badge badge-pill badge-light" *ngIf="post.likes" [hidden]="argLikes <= 0">{{argLikes}}</span>
               </button>
             </div>
           </div>

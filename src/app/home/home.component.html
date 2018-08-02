@@ -1,4 +1,4 @@
 <div class="container">
   <app-create-post *ngIf="user" [user]="user"></app-create-post>
-  <app-post-list *ngIf="posts" [posts]="posts"></app-post-list>
+  <app-post-list *ngIf="user" [user]="user" [posts]="posts"></app-post-list>
 </div>

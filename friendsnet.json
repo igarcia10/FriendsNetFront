@@ -74,10 +74,54 @@
       "type": 1,
       "picture": "",
       "likes": [
-        {"type": 1},
-        {"type": 1},
-        {"type": 3},
-        {"type": 2}
+        {
+          "user": {
+            "id": 2
+          },
+          "type": 1
+        },
+        {
+          "user": {
+            "id": 4
+          },
+          "type": 1
+        },
+        {
+          "user": {
+            "id": 2
+          },
+          "type": 2
+        },
+        {
+          "user": {
+            "id": 2
+          },
+          "type": 3
+        },
+        {
+          "user": {
+            "id": 2
+          },
+          "type": 1
+        },
+        {
+          "user": {
+            "id": 4
+          },
+          "type": 3
+        },
+        {
+          "user": {
+            "id": 2
+          },
+          "type": 3
+        },
+        {
+          "user": {
+            "id": 2
+          },
+          "type": 3
+        }
       ],
       "user": {
         "id": 1,
@@ -107,9 +151,30 @@
       "type": 1,
       "picture": "",
       "likes": [
-        {"type": 1},
-        {"type": 1},
-        {"type": 2}
+        {
+          "user": {
+            "id": 2
+          },
+          "type": 1
+        },
+        {
+          "user": {
+            "id": 4
+          },
+          "type": 1
+        },
+        {
+          "user": {
+            "id": 2
+          },
+          "type": 2
+        },
+        {
+          "user": {
+            "id": 1
+          },
+          "type": 3
+        }
       ],
       "user": {
         "id": 2,
@@ -132,16 +197,7 @@
       "creationDate": "2018-07-30T22:00:20.222Z",
       "type": 1,
       "picture": "",
-      "likes": [
-        {"type": 2},
-        {"type": 1},
-        {"type": 3},
-        {"type": 2},
-        {"type": 3},
-        {"type": 1},
-        {"type": 3},
-        {"type": 2}
-      ],
+      "likes": [],
       "user": {
         "id": 3,
         "name": "Fabián",
