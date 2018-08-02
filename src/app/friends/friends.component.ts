@@ -40,10 +40,13 @@ export class FriendsComponent implements OnInit {
       });
   }
 
-  unfriend() {
+  unfriend(user: User) {
+    this.user.friends.splice(this.user.friends.indexOf(user), 1);
   }
 
-  add() {
+  add(users: User[]) {
+    this.userService.relate(this.user.id, users)
+      .subscribe((data: User) => this.user = data);
   }
 
   switchDeletable() {
@@ -85,11 +88,6 @@ export class FriendsComponent implements OnInit {
       });
       this.persons = searchPersons;
     }
-  }
-
-  addUser(users: User[]){
-    this.userService.relate(this.user.id, users)
-      .subscribe((data: User) => this.user = data);
   }
 
 }

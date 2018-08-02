@@ -10,7 +10,7 @@
         <span class="h5">{{person.user.name + ' ' + person.user.surname}}</span>
       </div>
       <div class="unfriend">
-        <button class="btn btn-link float-right mr-3 unfriend" (click)="unfriend()" *ngIf="deletable && person.isFriend">
+        <button class="btn btn-link float-right mr-3 unfriend" (click)="unfriendPerson()" *ngIf="deletable && person.isFriend">
           <i class="fas fa-times-circle fa-2x"></i>
         </button>
       </div>

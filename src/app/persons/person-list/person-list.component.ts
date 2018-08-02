@@ -12,6 +12,7 @@ export class PersonListComponent implements OnInit {
   @Input() persons: Person[] = [];
   @Output() select = new EventEmitter<Person>();
   @Output() add = new EventEmitter<User[]>();
+  @Output() unfriend = new EventEmitter<User>();
 
   constructor() { }
 
@@ -24,6 +25,10 @@ export class PersonListComponent implements OnInit {
 
   addUser(user: User[]) {
     this.add.emit(user);
+  }
+
+  unfriendUser(user: User) {
+    this.unfriend.emit(user);
   }
 
 }

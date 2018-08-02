@@ -13,6 +13,7 @@ export class PersonComponent implements OnInit {
   @Input() person: Person;
   @Output() select = new EventEmitter<Person>();
   @Output() addUser = new EventEmitter<User[]>();
+  @Output() unfriend = new EventEmitter<User>();
   deletable = false;
 
   constructor(private userService: UserService) { }
@@ -20,7 +21,8 @@ export class PersonComponent implements OnInit {
   ngOnInit() {
   }
 
-  unfriend() {
+  unfriendPerson() {
+    this.unfriend.emit(this.person.user);
   }
 
   addPerson() {
