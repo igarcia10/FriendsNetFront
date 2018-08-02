@@ -6,7 +6,7 @@
   </div>
   <div class="row">
     <div class="col">
-      <app-post-list *ngIf="user" [user]="user"></app-post-list>
+      <app-post-list *ngIf="posts" [posts]="posts"></app-post-list>
     </div>
     <div class="col-4" *ngIf="user">
         <app-person-list *ngIf="persons" [persons]="persons"></app-person-list>
