@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Person } from '../shared/person.model';
+import { User } from '../../users/shared/user.model';
 
 @Component({
   selector: 'app-person-list',
@@ -10,6 +11,7 @@ export class PersonListComponent implements OnInit {
 
   @Input() persons: Person[] = [];
   @Output() select = new EventEmitter<Person>();
+  @Output() add = new EventEmitter<User[]>();
 
   constructor() { }
 
@@ -18,6 +20,10 @@ export class PersonListComponent implements OnInit {
 
   selectPerson(person: Person) {
     this.select.emit(person);
+  }
+
+  addUser(user: User[]) {
+    this.add.emit(user);
   }
 
 }

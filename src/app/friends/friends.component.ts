@@ -87,4 +87,9 @@ export class FriendsComponent implements OnInit {
     }
   }
 
+  addUser(users: User[]){
+    this.userService.relate(this.user.id, users)
+      .subscribe((data: User) => this.user = data);
+  }
+
 }

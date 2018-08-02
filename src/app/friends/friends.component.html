@@ -18,7 +18,7 @@
 					</div>
 				</form>
 			</div>
-			<app-person-list *ngIf="persons" [persons]="persons" (select)="getPerson($event)"></app-person-list>
+			<app-person-list *ngIf="persons" [persons]="persons" (select)="getPerson($event)" (add)="addUser($event)"></app-person-list>
 		</div>
 		<div class="col">
 			<div class="row info">

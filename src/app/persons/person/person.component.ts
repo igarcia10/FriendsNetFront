@@ -1,5 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Person } from '../shared/person.model';
+import { User } from '../../users/shared/user.model';
+import { UserService } from '../../users/shared/user.service';
 
 @Component({
   selector: 'app-person',
@@ -10,9 +12,10 @@ export class PersonComponent implements OnInit {
 
   @Input() person: Person;
   @Output() select = new EventEmitter<Person>();
+  @Output() addUser = new EventEmitter<User[]>();
   deletable = false;
 
-  constructor() { }
+  constructor(private userService: UserService) { }
 
   ngOnInit() {
   }
@@ -20,7 +23,10 @@ export class PersonComponent implements OnInit {
   unfriend() {
   }
 
-  add() {
+  addPerson() {
+    const friends: User[] = [];
+    friends.push(this.person.user);
+    this.addUser.emit(friends);
   }
 
   switchDeletable() {
