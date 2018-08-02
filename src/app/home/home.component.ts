@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit {
   posts: Post[] = [];
 
   constructor(private userService: UserService,
-              private postService: PostService) {}
+              private postService: PostService) { }
 
   ngOnInit() {
     this.userService.getUserById(1)
@@ -29,9 +29,9 @@ export class HomeComponent implements OnInit {
 
   getPosts() {
     this.postService.getPostsByPersonId(this.user.id)
-        .subscribe((data: Post[]) => this.posts = data);
-      this.user.friends.forEach((friend: User) => this.postService.getPostsByPersonId(friend.id)
-        .subscribe((data: Post[]) => data.forEach((post: Post) => this.posts.push(post))));
+      .subscribe((data: Post[]) => this.posts = data);
+    this.user.friends.forEach((friend: User) => this.postService.getPostsByPersonId(friend.id)
+      .subscribe((data: Post[]) => data.forEach((post: Post) => this.posts.push(post))));
   }
 
 }

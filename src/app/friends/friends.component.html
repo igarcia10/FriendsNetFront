@@ -37,6 +37,10 @@
 						</div>
 						<div class="col">
 							<span class="h5">{{person.user.name + ' ' + person.user.surname}}</span>
+							<div *ngIf="person.isFriend">
+								<p>{{person.user.bio}}</p>
+								<div class="friend-footer">Friend</div>
+							</div>
 						</div>
 						<div class="unfriend">
 							<button class="btn btn-link float-right mr-3 unfriend" (click)="unfriend()" *ngIf="deletable && person.isFriend">

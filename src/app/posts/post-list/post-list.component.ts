@@ -1,8 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { User } from '../../users/shared/user.model';
 import { Post } from '../shared/post.model';
-import { PostService } from '../shared/post.service';
-import { UserService } from '../../users/shared/user.service';
 
 @Component({
   selector: 'app-post-list',

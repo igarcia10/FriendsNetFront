@@ -10,13 +10,15 @@
           "id": 2,
           "name": "Teo",
           "surname": "Ivanov",
-          "picture": ""
+          "picture": "",
+          "bio": "Teo's bio."
         },
         {
           "id": 4,
           "name": "Edu",
           "surname": "Agobiao",
-          "picture": ""
+          "picture": "",
+          "bio": "Edu's bio."
         }
       ],
       "bio": "My bio."
@@ -26,12 +28,14 @@
       "name": "Teo",
       "surname": "Ivanov",
       "picture": "",
+      "bio": "Teo's bio.",
       "friends": [
         {
           "id": 1,
           "name": "Iván",
           "surname": "García",
-          "picture": ""
+          "picture": "",
+          "bio": "My bio."
         }
       ]
     },
@@ -40,6 +44,7 @@
       "name": "Fabián",
       "surname": "Pérez",
       "picture": "",
+      "bio": "Fabian's bio.",
       "friends": [
         {}
       ]
@@ -49,12 +54,14 @@
       "name": "Edu",
       "surname": "Agobiao",
       "picture": "",
+      "bio": "Edu's bio.",
       "friends": [
         {
           "id": 1,
           "name": "Iván",
           "surname": "García",
-          "picture": ""
+          "picture": "",
+          "bio": "My bio."
         }
       ]
     }
