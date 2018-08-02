@@ -1,4 +1,5 @@
 import { User } from '../../users/shared/user.model';
+import { Like } from './like.model';
 
 export class Post {
 
@@ -7,7 +8,7 @@ export class Post {
     creationDate: Date;
     type: Type;
     picture: string;
-    likes: any[];
+    likes: Like[];
     user: User;
 
 

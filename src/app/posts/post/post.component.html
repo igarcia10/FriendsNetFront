@@ -7,19 +7,35 @@
         </span>
       </div>
       <div class="col">
-        <p><span class="h5">{{post.user.name + ' ' + post.user.surname}}</span><br>{{post.text}}</p>
+        <p>
+          <span class="h5">{{post.user.name + ' ' + post.user.surname}}</span>
+          <br>{{post.text}}</p>
         <div class="post-footer d-flex justify-content-between">
-          <div class="like-type">
-            <i class="fas fa-thumbs-up" *ngIf="post.likes" [hidden]="post.likes.length <= 0"></i>
-            <span class="badge badge-pill badge-light" *ngIf="post.likes" [hidden]="post.likes.length <= 0">{{post.likes.length}}</span>
+          <div class="likes d-flex flex-row">
+            <div class="cool-like">
+              <button class="btn btn-link">
+                <i class="far fa-thumbs-up" *ngIf="post.likes" [hidden]="post.likes.length > 0"></i>
+                <i class="fas fa-thumbs-up" *ngIf="post.likes" [hidden]="post.likes.length <= 0"></i>
+                <span class="badge badge-pill badge-light" *ngIf="post.likes" [hidden]="post.likes.length <= 0">{{post.likes.length}}</span>
+              </button>
+            </div>
+            <div class="dontcare-like">
+              <button class="btn btn-link">
+                <i class="far fa-meh" *ngIf="post.likes" [hidden]="post.likes.length > 0"></i>
+                <i class="fas fa-meh" *ngIf="post.likes" [hidden]="post.likes.length <= 0"></i>
+                <span class="badge badge-pill badge-light" *ngIf="post.likes" [hidden]="post.likes.length <= 0">{{post.likes.length}}</span>
+              </button>
+            </div>
+            <div class="arg-like">
+              <button class="btn btn-link">
+                <i class="far fa-angry" *ngIf="post.likes" [hidden]="post.likes.length > 0"></i>
+                <i class="fas fa-angry" *ngIf="post.likes" [hidden]="post.likes.length <= 0"></i>
+                <span class="badge badge-pill badge-light" *ngIf="post.likes" [hidden]="post.likes.length <= 0">{{post.likes.length}}</span>
+              </button>
+            </div>
           </div>
           <div class="date">
             <span class="date">{{post.creationDate | date: 'dd/MM/yyyy'}}</span>
-          </div>
-          <div>
-            <button class="btn" type="submit">
-              <i class="far fa-thumbs-up"></i>
-            </button>
           </div>
         </div>
       </div>

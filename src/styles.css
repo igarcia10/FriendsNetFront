@@ -58,11 +58,11 @@ body {
 
 /* USER */
 
-.bio button {
+.bio button, .post button {
     color: #659e6e;
 }
 
-.bio button:hover {
+.bio button:hover, .post button:hover {
     color: #41864c;
 }
 
@@ -80,6 +80,11 @@ body {
 }
 
 .post button {
+    margin: 0 5px;
+    padding: 0;
+}
+
+.create-post button {
     border: 1px solid #316439;
     padding: 5px 30px;
     font-size: 14px;
@@ -89,7 +94,7 @@ body {
     border-radius: 3px;
 }
 
-.post button:hover {
+.create-post button:hover {
     background: linear-gradient(to bottom, #41864c 100%,  #659e6e 0%);
 }
 
@@ -128,3 +133,6 @@ body {
 .info {
     margin-top: 58px;
 }
+
+/* LIKES */
+
