@@ -66,24 +66,25 @@ export class FriendsComponent implements OnInit {
   }
 
   searchUser() {
-    this.users = this.userService.searchUsers(this.text);
-    let searchPersons: Person[] = [];
-    this.users.map((u: User) => {
-      if (u.id !== this.user.id) {
-        const p = new Person();
-        p.user = u;
-        let friends = false;
-        u.friends.forEach((friend: Friend) => {
-          if (friend.id === this.user.id) {
-            friends = true;
-          }
-        });
-        p.isFriend = friends;
-        searchPersons.push(p);
-      }
-    });
-    this.persons = searchPersons;
+    if (this.text.length > 0) {
+      this.users = this.userService.searchUsers(this.text);
+      const searchPersons: Person[] = [];
+      this.users.map((u: User) => {
+        if (u.id !== this.user.id) {
+          const p = new Person();
+          p.user = u;
+          let friends = false;
+          u.friends.forEach((friend: Friend) => {
+            if (friend.id === this.user.id) {
+              friends = true;
+            }
+          });
+          p.isFriend = friends;
+          searchPersons.push(p);
+        }
+      });
+      this.persons = searchPersons;
+    }
   }
-
 
 }

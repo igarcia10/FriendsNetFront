@@ -1,7 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Person } from '../shared/person.model';
-import { User } from '../../users/shared/user.model';
-import { Friend } from '../../friends/shared/friend.model';
 
 @Component({
   selector: 'app-person-list',
