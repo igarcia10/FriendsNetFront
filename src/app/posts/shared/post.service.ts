@@ -13,7 +13,7 @@ const httpOptions = {
 @Injectable()
 export class PostService {
 
-    URL_BASE = 'http://localhost:3000/posts';
+    URL_BASE = 'http://localhost:8080/posts';
 
     constructor(private http: HttpClient) {}
 
