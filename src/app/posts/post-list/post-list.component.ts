@@ -11,31 +11,13 @@ import { UserService } from '../../users/shared/user.service';
 })
 export class PostListComponent implements OnInit {
 
-  @Input() postListEnum: PostListEnum;
-  @Input() user: User;
-  posts: Post[] = [];
+  @Input() posts: Post[];
 
-  constructor(private userService: UserService,
-    private postService: PostService) {
-    this.user = new User();
+  constructor() {
   }
 
   ngOnInit() {
-    this.getPosts();
-    //TODO
     this.posts.sort((a, b) => a.creationDate.getDate() - b.creationDate.getDate());
-  }
-
-  getPosts() {
-    if (this.postListEnum == 1) {
-      this.postService.getPostsByPersonId(this.user.id)
-        .subscribe((data: Post[]) => this.posts = data);
-      this.user.friends.forEach((friend: User) => this.postService.getPostsByPersonId(friend.id)
-        .subscribe((data: Post[]) => data.forEach((post: Post) => this.posts.push(post))));
-    } else {
-      this.postService.getPostsByPersonId(this.user.id)
-        .subscribe((data: Post[]) => this.posts = data);
-    }
   }
 
 }
