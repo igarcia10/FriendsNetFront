@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Person } from '../shared/person.model';
 import { User } from '../../users/shared/user.model';
 import { UserService } from '../../users/shared/user.service';
@@ -18,7 +19,8 @@ export class PersonInfoComponent implements OnInit {
   deletable = false;
   text = '';
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService,
+    private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
     this.text = '';
@@ -27,24 +29,31 @@ export class PersonInfoComponent implements OnInit {
         this.user = data;
         if (this.user) {
           this.getPersons();
+          this.activatedRoute.params.subscribe((params: any) => {
+            if (params.text !== undefined) {
+              this.text = params.text;
+              this.users = this.userService.searchUsers(params.text);
+              this.searchUser();
+            }
+          });
         }
       });
   }
 
   unfriend() {
   }
-  
+
   add() {
   }
-  
+
   switchDeletable() {
     this.deletable = !this.deletable;
   }
-  
+
   getPerson(person: Person) {
     this.person = person;
   }
-  
+
   getPersons() {
     if (this.user) {
       this.user.friends.forEach((friend: any) => {

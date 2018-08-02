@@ -31,7 +31,7 @@ const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'profile', component: ProfileComponent },
   { path: 'friends', component: FriendsComponent },
-  { path: 'friends/:text', component: UserSearcherComponent },
+  { path: 'friends/:text', component: FriendsComponent },
   { path: 'events',      component: EventsComponent }];
 
 @NgModule({
