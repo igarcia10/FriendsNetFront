@@ -42,4 +42,10 @@ export class UserService {
              item.name.toLowerCase().includes(text.toLowerCase())
             || item.surname.toLowerCase().includes(text.toLowerCase()));
     }
+
+    relate(id: number, friends: User[]): Observable<User> {
+        const url = `${this.URL_BASE}/${id}/relate`;
+
+        return this.http.post<User>(url, friends, httpOptions);
+    }
 }

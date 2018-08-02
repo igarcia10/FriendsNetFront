@@ -29,4 +29,10 @@ export class PostService {
     postPost(post: Post): Observable<Post> {
         return this.http.post<Post>(this.URL_BASE, post, httpOptions);
     }
+
+    addLike(postId: number, userId: number, like: LikeType): Observable<Post> {
+        const url = `${this.URL_BASE}/${postId}/person/${userId}/like/${like}`;
+
+        return this.http.post<Post>(url, httpOptions);
+    }
 }
