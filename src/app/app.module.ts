@@ -19,12 +19,10 @@ import { ProfileComponent } from './profile/profile.component';
 import { PersonsComponent } from './persons/persons.component';
 import { PersonComponent } from './persons/person/person.component';
 import { PersonListComponent } from './persons/person-list/person-list.component';
-import { UserSearcherComponent } from './users/user-searcher/user-searcher.component';
 import { HeaderComponent } from './header/header.component';
 
 import { UserService } from './users/shared/user.service';
 import { PostService } from './posts/shared/post.service';
-import { PersonInfoComponent } from './persons/person-info/person-info.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -51,9 +49,7 @@ const appRoutes: Routes = [
     PersonsComponent,
     PersonComponent,
     PersonListComponent,
-    UserSearcherComponent,
-    HeaderComponent,
-    PersonInfoComponent
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
