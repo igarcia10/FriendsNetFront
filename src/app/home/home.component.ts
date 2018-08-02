@@ -34,6 +34,10 @@ export class HomeComponent implements OnInit {
       .subscribe((data: Post[]) => data.forEach((post: Post) => this.posts.push(post))));
   }
 
+  addPost(post: Post) {
+    this.posts.push(post);
+  }
+
   removePost(post: Post) {
     this.posts.splice(this.posts.indexOf(post), 1);
   }

@@ -1,7 +1,8 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { PostService } from '../shared/post.service';
 import { Post } from '../shared/post.model';
 import { User } from '../../users/shared/user.model';
+import { Like } from '../shared/like.model';
 
 @Component({
   selector: 'app-create-post',
@@ -11,6 +12,7 @@ import { User } from '../../users/shared/user.model';
 export class CreatePostComponent implements OnInit {
 
   @Input() user: User;
+  @Output() newPost = new EventEmitter<Post>();
   post: Post = new Post();
   posts: Post[];
 
@@ -25,10 +27,14 @@ export class CreatePostComponent implements OnInit {
   addPost() {
     if (this.post.text) {
       this.post.user = this.user;
-      this.post.likes = null;
+      const likes: Like[] = [];
+      this.post.likes = likes;
       this.post.creationDate = new Date();
       this.postService.postPost(this.post)
-        .subscribe((data: Post) => this.posts.push(data));
+        .subscribe((data: Post) => {
+          this.posts.push(data);
+          this.newPost.emit(data);
+        });
       this.post = new Post();
     }
   }
