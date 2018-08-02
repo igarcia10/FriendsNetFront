@@ -11,7 +11,7 @@ export class PostListComponent implements OnInit {
 
   @Input() user: User;
   @Input() posts: Post[];
-  @Output() remove = new EventEmitter<Post>();
+  @Output() removedPost = new EventEmitter<Post>();
 
   constructor() {
   }
@@ -21,8 +21,8 @@ export class PostListComponent implements OnInit {
   }
 
   removePost(post: Post) {
-    this.posts.slice(this.posts.indexOf(post), 1);
-    this.remove.emit(post);
+    this.posts.splice(this.posts.indexOf(post), 1);
+    this.removedPost.emit(post);
   }
 
 }

@@ -38,6 +38,6 @@ export class PostService {
 
     removePost(id: number) {
         const url = `${this.URL_BASE}/${id}`;
-        this.http.delete(url, httpOptions);
+        this.http.delete(url, httpOptions).subscribe();
     }
 }

@@ -35,7 +35,7 @@ export class HomeComponent implements OnInit {
   }
 
   removePost(post: Post) {
-    this.posts.slice(this.posts.indexOf(post), 1);
+    this.posts.splice(this.posts.indexOf(post), 1);
   }
 
 }
