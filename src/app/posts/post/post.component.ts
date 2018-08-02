@@ -41,7 +41,7 @@ export class PostComponent implements OnInit {
             this.dontcareLikes++;
             break;
           }
-          case 3:
+        case 3:
           {
             if (like.user.id === this.user.id) {
               this.userArgLike = true;
@@ -57,41 +57,68 @@ export class PostComponent implements OnInit {
     const like = new Like();
     like.user = this.user;
     this.postService.addLike(this.post.id, this.user.id, likeType);
-    if (this.userCoolLike || this.userDontcareLike || this.userArgLike) {
-      if (this.userCoolLike) {
-        this.userCoolLike = false;
-        this.coolLikes--;
-      } else if (this.dontcareLikes) {
-        this.userDontcareLike = false;
-        this.dontcareLikes--;
-      } else {
-        this.userArgLike = false;
-        this.argLikes--;
-      }
-    }
     switch (likeType) {
       case 1:
         {
-          if (like.user.id === this.user.id) {
+          if (this.userCoolLike) {
+            this.userCoolLike = false;
+            this.coolLikes--;
+          } else if (this.userDontcareLike || this.userArgLike) {
+            if (this.userDontcareLike) {
+              this.userDontcareLike = false;
+              this.dontcareLikes--;
+            } else {
+              this.userArgLike = false;
+              this.argLikes--;
+            }
             this.userCoolLike = true;
+            this.coolLikes++;
+          } else {
+            this.userCoolLike = true;
+            this.coolLikes++;
           }
-          this.coolLikes++;
           break;
         }
       case 2:
         {
-          if (like.user.id === this.user.id) {
+          if (this.userDontcareLike) {
+            this.userDontcareLike = false;
+            this.dontcareLikes--;
+          } else if (this.userCoolLike || this.userArgLike) {
+            if (this.userCoolLike) {
+              this.userCoolLike = false;
+              this.coolLikes--;
+            } else {
+              this.userArgLike = false;
+              this.argLikes--;
+            }
             this.userDontcareLike = true;
+            this.dontcareLikes++;
+          } else {
+            this.userDontcareLike = true;
+            this.dontcareLikes++;
           }
-          this.dontcareLikes++;
           break;
         }
-        case 3:
+      case 3:
         {
-          if (like.user.id === this.user.id) {
+          if (this.userArgLike) {
+            this.userArgLike = false;
+            this.argLikes--;
+          } else if (this.userCoolLike || this.userDontcareLike) {
+            if (this.userCoolLike) {
+              this.userCoolLike = false;
+              this.coolLikes--;
+            } else {
+              this.userDontcareLike = false;
+              this.dontcareLikes--;
+            }
             this.userArgLike = true;
+            this.argLikes++;
+          } else {
+            this.userArgLike = true;
+            this.argLikes++;
           }
-          this.argLikes++;
           break;
         }
     }
