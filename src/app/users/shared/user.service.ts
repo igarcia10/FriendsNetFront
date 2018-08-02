@@ -13,7 +13,7 @@ const httpOptions = {
 @Injectable()
 export class UserService {
 
-    URL_BASE = 'http://localhost:8080/persons';
+    URL_BASE = 'http://localhost:3000/users';
 
     users: User[] = [];
 

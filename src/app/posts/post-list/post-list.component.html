@@ -1,3 +1,3 @@
-<div *ngFor="let post of posts">
-    <app-post [post]="post" [user]="user" (remove)="removePost($event)"></app-post>
+<div class="animated" *ngFor="let post of posts">
+    <app-post class="animated fast" [post]="post" [user]="user" (remove)="removePost($event)"></app-post>
 </div>
