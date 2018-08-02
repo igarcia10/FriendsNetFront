@@ -14,14 +14,11 @@ export class CreatePostComponent implements OnInit {
   @Input() user: User;
   @Output() newPost = new EventEmitter<Post>();
   post: Post = new Post();
-  posts: Post[];
 
   constructor(private postService: PostService) {
   }
 
   ngOnInit() {
-    this.postService.getPosts()
-      .subscribe((data: Post[]) => this.posts = data);
   }
 
   addPost() {
@@ -31,10 +28,7 @@ export class CreatePostComponent implements OnInit {
       this.post.likes = likes;
       this.post.creationDate = new Date();
       this.postService.postPost(this.post)
-        .subscribe((data: Post) => {
-          this.posts.push(data);
-          this.newPost.emit(data);
-        });
+        .subscribe((data: Post) => this.newPost.emit(data));
       this.post = new Post();
     }
   }
