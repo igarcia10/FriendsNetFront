@@ -13,7 +13,7 @@ const httpOptions = {
 @Injectable()
 export class UserService {
 
-    URL_BASE = 'http://localhost:3000/users';
+    URL_BASE = 'http://localhost:8080/persons';
 
     users: User[] = [];
 
@@ -34,7 +34,7 @@ export class UserService {
     putUser(user: User): Observable<User> {
         const url = `${this.URL_BASE}/${user.id}`;
 
-        return this.http.put<User>(url, user, httpOptions);
+        return this.http.post<User>(url, user, httpOptions);
     }
 
     searchUsers(text: string): User[] {
