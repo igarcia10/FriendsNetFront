@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { CustomPerson } from '../shared/custom-person.model';
-import { Person } from '../../users/shared/person.model';
-import { UserService } from '../../users/shared/person.service';
+import { CustomPerson } from '../shared/person.model';
+import { Person } from '../../users/shared/user.model';
+import { UserService } from '../../users/shared/user.service';
 
 @Component({
   selector: 'app-person',

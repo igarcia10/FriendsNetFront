@@ -1,4 +1,4 @@
-import { Person } from '../../users/shared/person.model';
+import { Person } from '../../users/shared/user.model';
 
 export class Like {
     type: LikeType;

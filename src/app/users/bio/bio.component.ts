@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Person } from '../shared/person.model';
-import { UserService } from '../shared/person.service';
+import { Person } from '../shared/user.model';
+import { UserService } from '../shared/user.service';
 
 @Component({
   selector: 'app-bio',

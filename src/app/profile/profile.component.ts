@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../users/shared/person.service';
-import { Person } from '../users/shared/person.model';
-import { CustomPerson } from '../persons/shared/custom-person.model';
+import { UserService } from '../users/shared/user.service';
+import { Person } from '../users/shared/user.model';
+import { CustomPerson } from '../persons/shared/person.model';
 import { PostService } from '../posts/shared/post.service';
 import { Post } from '../posts/shared/post.model';
 

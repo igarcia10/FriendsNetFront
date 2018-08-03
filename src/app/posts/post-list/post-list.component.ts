@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Post } from '../shared/post.model';
-import { Person } from '../../users/shared/person.model';
+import { Person } from '../../users/shared/user.model';
 
 @Component({
   selector: 'app-post-list',
