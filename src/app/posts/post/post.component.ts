@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Post } from '../shared/post.model';
 import { Like } from '../shared/like.model';
-import { Person } from '../../users/shared/person.model';
+import { Person } from '../../persons/shared/person.model';
 import { PostService } from '../shared/post.service';
 
 @Component({

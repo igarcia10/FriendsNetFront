@@ -11,7 +11,7 @@ const httpOptions = {
 };
 
 @Injectable()
-export class UserService {
+export class PersonService {
 
     URL_BASE = 'http://localhost:8080/persons';
 

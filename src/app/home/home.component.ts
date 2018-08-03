@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../users/shared/person.service';
-import { Person } from '../users/shared/person.model';
+import { PersonService } from '../persons/shared/person.service';
+import { Person } from '../persons/shared/person.model';
 import { PostService } from '../posts/shared/post.service';
 import { Post } from '../posts/shared/post.model';
 
@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
   person: Person;
   posts: Post[];
 
-  constructor(private userService: UserService,
+  constructor(private userService: PersonService,
               private postService: PostService) { }
 
   ngOnInit() {

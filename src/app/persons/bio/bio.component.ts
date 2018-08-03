@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Person } from '../shared/person.model';
-import { UserService } from '../shared/person.service';
+import { PersonService } from '../shared/person.service';
 
 @Component({
   selector: 'app-bio',
@@ -13,7 +13,7 @@ export class BioComponent implements OnInit {
   editable = false;
   editMode = false;
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: PersonService) { }
 
   ngOnInit() {
   }

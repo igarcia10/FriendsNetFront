@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { CustomPerson } from '../shared/custom-person.model';
-import { Person } from '../../users/shared/person.model';
-import { UserService } from '../../users/shared/person.service';
+import { Person } from '../../persons/shared/person.model';
+import { PersonService } from '../../persons/shared/person.service';
 
 @Component({
   selector: 'app-person',
@@ -16,7 +16,7 @@ export class PersonComponent implements OnInit {
   @Output() unfriend = new EventEmitter<Person>();
   deletable = false;
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: PersonService) { }
 
   ngOnInit() {
   }

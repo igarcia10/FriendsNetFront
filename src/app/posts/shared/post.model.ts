@@ -1,4 +1,4 @@
-import { Person } from '../../users/shared/person.model';
+import { Person } from '../../persons/shared/person.model';
 import { Like } from './like.model';
 
 export class Post {

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Person } from '../users/shared/person.model';
-import { UserService } from '../users/shared/person.service';
-import { CustomPerson } from '../persons/shared/custom-person.model';
+import { Person } from '../persons/shared/person.model';
+import { PersonService } from '../persons/shared/person.service';
+import { CustomPerson } from '../custom-persons/shared/custom-person.model';
 import { Friend } from './shared/friend.model';
 import { ActivatedRoute } from '@angular/router';
 
@@ -19,7 +19,7 @@ export class FriendsComponent implements OnInit {
   deletable = false;
   text = '';
 
-  constructor(private userService: UserService,
+  constructor(private userService: PersonService,
     private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {

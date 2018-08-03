@@ -5,22 +5,20 @@ import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { PostsComponent } from './posts/posts.component';
 import { PostComponent } from './posts/post/post.component';
 import { CreatePostComponent } from './posts/create-post/create-post.component';
 import { PostListComponent } from './posts/post-list/post-list.component';
-import { UsersComponent } from './users/users.component';
-import { BioComponent } from './users/bio/bio.component';
-import { UserHeaderComponent } from './users/user-header/user-header.component';
+import { BioComponent } from './persons/bio/bio.component';
+import { PersonHeaderComponent } from './persons/person-header/person-header.component';
 import { FriendsComponent } from './friends/friends.component';
 import { HomeComponent } from './home/home.component';
 import { EventsComponent } from './events/events.component';
 import { ProfileComponent } from './profile/profile.component';
-import { PersonComponent } from './persons/person/person.component';
-import { PersonListComponent } from './persons/person-list/person-list.component';
+import { PersonComponent } from './custom-persons/person/person.component';
+import { PersonListComponent } from './custom-persons/person-list/person-list.component';
 import { HeaderComponent } from './header/header.component';
 
-import { UserService } from './users/shared/person.service';
+import { PersonService } from './persons/shared/person.service';
 import { PostService } from './posts/shared/post.service';
 
 const appRoutes: Routes = [
@@ -34,13 +32,11 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    PostsComponent,
     PostComponent,
     CreatePostComponent,
     PostListComponent,
-    UsersComponent,
     BioComponent,
-    UserHeaderComponent,
+    PersonHeaderComponent,
     FriendsComponent,
     HomeComponent,
     EventsComponent,
@@ -56,7 +52,7 @@ const appRoutes: Routes = [
     FormsModule
   ],
   providers: [
-    UserService,
+    PersonService,
     PostService
   ],
   bootstrap: [AppComponent]
