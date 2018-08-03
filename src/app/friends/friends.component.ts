@@ -19,12 +19,12 @@ export class FriendsComponent implements OnInit {
   deletable = false;
   text = '';
 
-  constructor(private userService: PersonService,
+  constructor(private personService: PersonService,
     private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
     this.text = '';
-    this.userService.getUserById(1)
+    this.personService.getUserById(1)
       .subscribe((data: Person) => {
         this.person = data;
         if (this.person) {
@@ -32,7 +32,7 @@ export class FriendsComponent implements OnInit {
           this.activatedRoute.params.subscribe((params: any) => {
             if (params.text !== undefined) {
               this.text = params.text;
-              this.persons = this.userService.searchUsers(params.text);
+              this.persons = this.personService.searchUsers(params.text);
               this.searchUser();
             }
           });
@@ -40,12 +40,12 @@ export class FriendsComponent implements OnInit {
       });
   }
 
-  unfriend(user: Person) {
-    this.person.friends.splice(this.person.friends.indexOf(user), 1);
+  unfriend(person: Person) {
+    this.person.friends.splice(this.person.friends.indexOf(person), 1);
   }
 
-  add(users: Person[]) {
-    this.userService.relate(this.person.id, users)
+  add(persons: Person[]) {
+    this.personService.relate(this.person.id, persons)
       .subscribe((data: Person) => this.person = data);
   }
 
@@ -53,8 +53,8 @@ export class FriendsComponent implements OnInit {
     this.deletable = !this.deletable;
   }
 
-  getPerson(person: CustomPerson) {
-    this.customPerson = person;
+  getPerson(customPerson: CustomPerson) {
+    this.customPerson = customPerson;
   }
 
   getPersons() {
@@ -70,7 +70,7 @@ export class FriendsComponent implements OnInit {
 
   searchUser() {
     if (this.text.length > 0) {
-      this.persons = this.userService.searchUsers(this.text);
+      this.persons = this.personService.searchUsers(this.text);
       const searchPersons: CustomPerson[] = [];
       this.persons.map((u: Person) => {
         if (u.id !== this.person.id) {

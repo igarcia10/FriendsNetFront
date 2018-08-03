@@ -19,16 +19,16 @@ export class PersonListComponent implements OnInit {
   ngOnInit() {
   }
 
-  selectPerson(person: CustomPerson) {
-    this.select.emit(person);
+  selectPerson(customPerson: CustomPerson) {
+    this.select.emit(customPerson);
   }
 
-  addUser(user: Person[]) {
-    this.add.emit(user);
+  addUser(person: Person[]) {
+    this.add.emit(person);
   }
 
-  unfriendUser(user: Person) {
-    this.unfriend.emit(user);
+  unfriendUser(person: Person) {
+    this.unfriend.emit(person);
   }
 
 }

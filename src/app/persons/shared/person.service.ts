@@ -31,10 +31,10 @@ export class PersonService {
         return this.http.get<Person>(url, httpOptions);
     }
 
-    putUser(user: Person): Observable<Person> {
-        const url = `${this.URL_BASE}/${user.id}`;
+    putUser(person: Person): Observable<Person> {
+        const url = `${this.URL_BASE}/${person.id}`;
 
-        return this.http.post<Person>(url, user, httpOptions);
+        return this.http.post<Person>(url, person, httpOptions);
     }
 
     searchUsers(text: string): Person[] {
