@@ -3,6 +3,7 @@ import { Post } from '../shared/post.model';
 import { Like } from '../shared/like.model';
 import { Person } from '../../persons/shared/person.model';
 import { PostService } from '../shared/post.service';
+import { LikeType } from '../shared/like-type.enum';
 
 @Component({
   selector: 'app-post',
@@ -26,7 +27,7 @@ export class PostComponent implements OnInit {
   ngOnInit() {
     this.post.likes.forEach((like: Like) => {
       switch (like.type) {
-        case 1:
+        case 'COOL':
           {
             if (like.person.id === this.person.id) {
               this.personCoolLike = true;
@@ -34,7 +35,7 @@ export class PostComponent implements OnInit {
             this.coolLikes++;
             break;
           }
-        case 2:
+        case 'DONTCARE':
           {
             if (like.person.id === this.person.id) {
               this.personDontcareLike = true;
@@ -42,7 +43,7 @@ export class PostComponent implements OnInit {
             this.dontcareLikes++;
             break;
           }
-        case 3:
+        case 'ARG':
           {
             if (like.person.id === this.person.id) {
               this.personArgLike = true;
@@ -54,13 +55,10 @@ export class PostComponent implements OnInit {
     });
   }
 
-  like(likeType: number) {
-    const like = new Like();
-    like.person = this.person;
-    this.postService.addLike(this.post.id, this.person.id, likeType)
-      .subscribe((data: Post) => this.post = data);
+  like(likeType: string) {
+    let type: LikeType;
     switch (likeType) {
-      case 1:
+      case 'COOL':
         {
           if (this.personCoolLike) {
             this.personCoolLike = false;
@@ -79,9 +77,10 @@ export class PostComponent implements OnInit {
             this.personCoolLike = true;
             this.coolLikes++;
           }
+          type = LikeType.COOL;
           break;
         }
-      case 2:
+      case 'DONTCARE':
         {
           if (this.personDontcareLike) {
             this.personDontcareLike = false;
@@ -100,9 +99,10 @@ export class PostComponent implements OnInit {
             this.personDontcareLike = true;
             this.dontcareLikes++;
           }
+          type = LikeType.DONTCARE;
           break;
         }
-      case 3:
+      case 'ARG':
         {
           if (this.personArgLike) {
             this.personArgLike = false;
@@ -121,9 +121,12 @@ export class PostComponent implements OnInit {
             this.personArgLike = true;
             this.argLikes++;
           }
+          type = LikeType.ARG;
           break;
         }
     }
+    this.postService.addLike(this.post.id, this.person.id, type)
+      .subscribe((data: Post) => this.post = data);
   }
 
   removePost() {

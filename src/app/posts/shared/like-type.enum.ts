@@ -1,5 +1,5 @@
-enum LikeType {
-    COOL,
-    DONTCARE,
-    ARG
+export enum LikeType {
+    COOL = 'COOL',
+    DONTCARE = 'DONTCARE',
+    ARG = 'ARG'
 }

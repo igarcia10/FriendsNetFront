@@ -1,4 +1,4 @@
-enum PostListEnum {
+export enum PostListEnum {
     Everyone,
     UserOnly
 }
