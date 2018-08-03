@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Post } from '../shared/post.model';
 import { Like } from '../shared/like.model';
-import { Person } from '../../users/shared/user.model';
+import { Person } from '../../users/shared/person.model';
 import { PostService } from '../shared/post.service';
 
 @Component({
@@ -12,14 +12,14 @@ import { PostService } from '../shared/post.service';
 export class PostComponent implements OnInit {
 
   @Input() post: Post;
-  @Input() user: Person;
+  @Input() person: Person;
   @Output() remove = new EventEmitter<Post>();
   coolLikes = 0;
-  userCoolLike = false;
+  personCoolLike = false;
   dontcareLikes = 0;
-  userDontcareLike = false;
+  personDontcareLike = false;
   argLikes = 0;
-  userArgLike = false;
+  personArgLike = false;
 
   constructor(private postService: PostService) { }
 
@@ -28,24 +28,24 @@ export class PostComponent implements OnInit {
       switch (like.type) {
         case 1:
           {
-            if (like.user.id === this.user.id) {
-              this.userCoolLike = true;
+            if (like.person.id === this.person.id) {
+              this.personCoolLike = true;
             }
             this.coolLikes++;
             break;
           }
         case 2:
           {
-            if (like.user.id === this.user.id) {
-              this.userDontcareLike = true;
+            if (like.person.id === this.person.id) {
+              this.personDontcareLike = true;
             }
             this.dontcareLikes++;
             break;
           }
         case 3:
           {
-            if (like.user.id === this.user.id) {
-              this.userArgLike = true;
+            if (like.person.id === this.person.id) {
+              this.personArgLike = true;
             }
             this.argLikes++;
             break;
@@ -56,68 +56,68 @@ export class PostComponent implements OnInit {
 
   like(likeType: number) {
     const like = new Like();
-    like.user = this.user;
-    this.postService.addLike(this.post.id, this.user.id, likeType);
+    like.person = this.person;
+    this.postService.addLike(this.post.id, this.person.id, likeType);
     switch (likeType) {
       case 1:
         {
-          if (this.userCoolLike) {
-            this.userCoolLike = false;
+          if (this.personCoolLike) {
+            this.personCoolLike = false;
             this.coolLikes--;
-          } else if (this.userDontcareLike || this.userArgLike) {
-            if (this.userDontcareLike) {
-              this.userDontcareLike = false;
+          } else if (this.personDontcareLike || this.personArgLike) {
+            if (this.personDontcareLike) {
+              this.personDontcareLike = false;
               this.dontcareLikes--;
             } else {
-              this.userArgLike = false;
+              this.personArgLike = false;
               this.argLikes--;
             }
-            this.userCoolLike = true;
+            this.personCoolLike = true;
             this.coolLikes++;
           } else {
-            this.userCoolLike = true;
+            this.personCoolLike = true;
             this.coolLikes++;
           }
           break;
         }
       case 2:
         {
-          if (this.userDontcareLike) {
-            this.userDontcareLike = false;
+          if (this.personDontcareLike) {
+            this.personDontcareLike = false;
             this.dontcareLikes--;
-          } else if (this.userCoolLike || this.userArgLike) {
-            if (this.userCoolLike) {
-              this.userCoolLike = false;
+          } else if (this.personCoolLike || this.personArgLike) {
+            if (this.personCoolLike) {
+              this.personCoolLike = false;
               this.coolLikes--;
             } else {
-              this.userArgLike = false;
+              this.personArgLike = false;
               this.argLikes--;
             }
-            this.userDontcareLike = true;
+            this.personDontcareLike = true;
             this.dontcareLikes++;
           } else {
-            this.userDontcareLike = true;
+            this.personDontcareLike = true;
             this.dontcareLikes++;
           }
           break;
         }
       case 3:
         {
-          if (this.userArgLike) {
-            this.userArgLike = false;
+          if (this.personArgLike) {
+            this.personArgLike = false;
             this.argLikes--;
-          } else if (this.userCoolLike || this.userDontcareLike) {
-            if (this.userCoolLike) {
-              this.userCoolLike = false;
+          } else if (this.personCoolLike || this.personDontcareLike) {
+            if (this.personCoolLike) {
+              this.personCoolLike = false;
               this.coolLikes--;
             } else {
-              this.userDontcareLike = false;
+              this.personDontcareLike = false;
               this.dontcareLikes--;
             }
-            this.userArgLike = true;
+            this.personArgLike = true;
             this.argLikes++;
           } else {
-            this.userArgLike = true;
+            this.personArgLike = true;
             this.argLikes++;
           }
           break;

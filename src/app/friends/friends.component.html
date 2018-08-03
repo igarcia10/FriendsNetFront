@@ -18,11 +18,11 @@
 					</div>
 				</form>
 			</div>
-			<app-person-list *ngIf="persons" [persons]="persons" (select)="getPerson($event)" (add)="add($event)" (unfriend)="unfriend($event)"></app-person-list>
+			<app-person-list *ngIf="customPersons" [customPersons]="customPersons" (select)="getPerson($event)" (add)="add($event)" (unfriend)="unfriend($event)"></app-person-list>
 		</div>
 		<div class="col">
 			<div class="row info">
-				<div class="col person fn-container" *ngIf="person">
+				<div class="col person fn-container" *ngIf="customPerson">
 					<div class="row justify-content-center align-items-center" (mouseenter)="switchDeletable()" (mouseleave)="switchDeletable()">
 						<div class="col-auto pic">
 							<span>
@@ -30,9 +30,9 @@
 							</span>
 						</div>
 						<div class="col">
-							<span class="h5">{{person.user.name + ' ' + person.user.surname}}</span>
-							<div *ngIf="person.isFriend">
-								<p>{{person.user.bio}}</p>
+							<span class="h5">{{customPerson.person.name + ' ' + customPerson.person.surname}}</span>
+							<div *ngIf="customPerson.isFriend">
+								<p>{{customPerson.person.bio}}</p>
 								<div class="friend-footer">Friend</div>
 							</div>
 						</div>

@@ -7,15 +7,15 @@
         </span>
       </div>
       <div class="col">
-        <span class="h5">{{person.user.name + ' ' + person.user.surname}}</span>
+        <span class="h5">{{customPerson.person.name + ' ' + customPerson.person.surname}}</span>
       </div>
       <div class="unfriend">
-        <button class="btn btn-link float-right mr-3 unfriend" (click)="unfriendPerson()" *ngIf="deletable && person.isFriend">
+        <button class="btn btn-link float-right mr-3 unfriend" (click)="unfriendPerson()" *ngIf="deletable && customPerson.isFriend">
           <i class="fas fa-times-circle fa-2x"></i>
         </button>
       </div>
       <div class="add">
-        <button class="btn btn-link float-right mr-3 add" (click)="addPerson()" *ngIf="deletable && !person.isFriend">
+        <button class="btn btn-link float-right mr-3 add" (click)="addPerson()" *ngIf="deletable && !customPerson.isFriend">
           <i class="fas fa-plus-square fa-2x"></i>
         </button>
       </div>

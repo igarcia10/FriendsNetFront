@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Person } from '../users/shared/user.model';
-import { UserService } from '../users/shared/user.service';
-import { CustomPerson } from '../persons/shared/person.model';
+import { Person } from '../users/shared/person.model';
+import { UserService } from '../users/shared/person.service';
+import { CustomPerson } from '../persons/shared/custom-person.model';
 import { Friend } from './shared/friend.model';
 import { ActivatedRoute } from '@angular/router';
 
@@ -12,10 +12,10 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class FriendsComponent implements OnInit {
 
-  user: Person;
-  users: Person[];
-  person: CustomPerson;
-  persons: CustomPerson[] = [];
+  person: Person;
+  persons: Person[];
+  customPerson: CustomPerson;
+  customPersons: CustomPerson[] = [];
   deletable = false;
   text = '';
 
@@ -26,13 +26,13 @@ export class FriendsComponent implements OnInit {
     this.text = '';
     this.userService.getUserById(1)
       .subscribe((data: Person) => {
-        this.user = data;
-        if (this.user) {
+        this.person = data;
+        if (this.person) {
           this.getPersons();
           this.activatedRoute.params.subscribe((params: any) => {
             if (params.text !== undefined) {
               this.text = params.text;
-              this.users = this.userService.searchUsers(params.text);
+              this.persons = this.userService.searchUsers(params.text);
               this.searchUser();
             }
           });
@@ -41,12 +41,12 @@ export class FriendsComponent implements OnInit {
   }
 
   unfriend(user: Person) {
-    this.user.friends.splice(this.user.friends.indexOf(user), 1);
+    this.person.friends.splice(this.person.friends.indexOf(user), 1);
   }
 
   add(users: Person[]) {
-    this.userService.relate(this.user.id, users)
-      .subscribe((data: Person) => this.user = data);
+    this.userService.relate(this.person.id, users)
+      .subscribe((data: Person) => this.person = data);
   }
 
   switchDeletable() {
@@ -54,31 +54,31 @@ export class FriendsComponent implements OnInit {
   }
 
   getPerson(person: CustomPerson) {
-    this.person = person;
+    this.customPerson = person;
   }
 
   getPersons() {
-    if (this.user) {
-      this.user.friends.forEach((friend: any) => {
+    if (this.person) {
+      this.person.friends.forEach((friend: any) => {
         const p = new CustomPerson();
-        p.user = friend;
+        p.person = friend;
         p.isFriend = true;
-        this.persons.push(p);
+        this.customPersons.push(p);
       });
     }
   }
 
   searchUser() {
     if (this.text.length > 0) {
-      this.users = this.userService.searchUsers(this.text);
+      this.persons = this.userService.searchUsers(this.text);
       const searchPersons: CustomPerson[] = [];
-      this.users.map((u: Person) => {
-        if (u.id !== this.user.id) {
+      this.persons.map((u: Person) => {
+        if (u.id !== this.person.id) {
           const p = new CustomPerson();
-          p.user = u;
+          p.person = u;
           let friends = false;
           u.friends.forEach((friend: Friend) => {
-            if (friend.id === this.user.id) {
+            if (friend.id === this.person.id) {
               friends = true;
             }
           });
@@ -86,7 +86,7 @@ export class FriendsComponent implements OnInit {
           searchPersons.push(p);
         }
       });
-      this.persons = searchPersons;
+      this.customPersons = searchPersons;
     }
   }
 

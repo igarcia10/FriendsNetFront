@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../users/shared/user.service';
-import { Person } from '../users/shared/user.model';
+import { UserService } from '../users/shared/person.service';
+import { Person } from '../users/shared/person.model';
 import { PostService } from '../posts/shared/post.service';
 import { Post } from '../posts/shared/post.model';
 
@@ -11,8 +11,8 @@ import { Post } from '../posts/shared/post.model';
 })
 export class HomeComponent implements OnInit {
 
-  user: Person;
-  posts: Post[] = [];
+  person: Person;
+  posts: Post[];
 
   constructor(private userService: UserService,
               private postService: PostService) { }
@@ -20,18 +20,30 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.userService.getUserById(1)
       .subscribe((data: Person) => {
-        this.user = data;
-        if (this.user) {
+        this.person = data;
+        if (this.person) {
           this.getPosts();
         }
       });
   }
 
   getPosts() {
-    this.postService.getPostsByPersonId(this.user.id)
-      .subscribe((data: Post[]) => this.posts = data);
-    this.user.friends.forEach((friend: Person) => this.postService.getPostsByPersonId(friend.id)
-      .subscribe((data: Post[]) => data.forEach((post: Post) => this.posts.push(post))));
+    this.postService.getPostsByPersonId(this.person.id)
+      .subscribe((data: Post[]) => {
+        if (this.posts) {
+          this.posts = this.posts.concat(data);
+        } else {
+          this.posts = data;
+        }
+      });
+    this.person.friends.forEach((friend: Person) => this.postService.getPostsByPersonId(friend.id)
+      .subscribe((data: Post[]) => {
+        if (this.posts) {
+          this.posts = this.posts.concat(data);
+        } else {
+          this.posts = data;
+        }
+      }));
   }
 
   addPost(post: Post) {

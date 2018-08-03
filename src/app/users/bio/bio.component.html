@@ -6,9 +6,9 @@
           <button class="btn btn-link float-right" (click)="switchMode()" *ngIf="editable">
             <i class="fas fa-pen"></i>
           </button>
-          {{user.bio}}
+          {{person.bio}}
         </p>
-        <textarea name="message" placeholder="Post a message..." (blur)="putBio()" [(ngModel)]="user.bio" *ngIf="editMode" [autofocus]="editMode"></textarea>
+        <textarea name="message" placeholder="Post a message..." (blur)="putBio()" [(ngModel)]="person.bio" *ngIf="editMode" [autofocus]="editMode"></textarea>
       </div>
     </div>
   </div>

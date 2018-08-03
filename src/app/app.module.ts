@@ -20,7 +20,7 @@ import { PersonComponent } from './persons/person/person.component';
 import { PersonListComponent } from './persons/person-list/person-list.component';
 import { HeaderComponent } from './header/header.component';
 
-import { UserService } from './users/shared/user.service';
+import { UserService } from './users/shared/person.service';
 import { PostService } from './posts/shared/post.service';
 
 const appRoutes: Routes = [

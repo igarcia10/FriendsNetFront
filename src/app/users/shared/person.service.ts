@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Person } from './user.model';
+import { Person } from './person.model';
 
 const httpOptions = {
     headers: new HttpHeaders({
@@ -15,10 +15,10 @@ export class UserService {
 
     URL_BASE = 'http://localhost:8080/persons';
 
-    users: Person[] = [];
+    persons: Person[] = [];
 
     constructor(private http: HttpClient) {
-        this.getUsers().subscribe((data: Person[]) => this.users = data);
+        this.getUsers().subscribe((data: Person[]) => this.persons = data);
     }
 
     getUsers(): Observable<Person[]> {
@@ -38,7 +38,7 @@ export class UserService {
     }
 
     searchUsers(text: string): Person[] {
-        return this.users.filter(item =>
+        return this.persons.filter(item =>
              item.name.toLowerCase().includes(text.toLowerCase())
             || item.surname.toLowerCase().includes(text.toLowerCase()));
     }

@@ -1,15 +1,15 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      <app-bio *ngIf="user" [user]="user"></app-bio>
+      <app-bio *ngIf="person" [person]="person"></app-bio>
     </div>
   </div>
   <div class="row">
     <div class="col">
-      <app-post-list *ngIf="user" [user]="user" [posts]="posts" (remove)="removePost($event)"></app-post-list>
+      <app-post-list *ngIf="person" [person]="person" [posts]="posts" (remove)="removePost($event)"></app-post-list>
     </div>
-    <div class="col-4" *ngIf="user">
-        <app-person-list *ngIf="persons" [persons]="persons"></app-person-list>
+    <div class="col-4" *ngIf="person">
+        <app-person-list *ngIf="customPersons" [customPersons]="customPersons"></app-person-list>
     </div>
   </div>
 </div>

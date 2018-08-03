@@ -1,4 +1,4 @@
-import { Person } from '../../users/shared/user.model';
+import { Person } from '../../users/shared/person.model';
 import { Like } from './like.model';
 
 export class Post {
@@ -9,7 +9,7 @@ export class Post {
     type: Type;
     picture: string;
     likes: Like[];
-    user: Person;
+    person: Person;
 
 
     constructor() { }

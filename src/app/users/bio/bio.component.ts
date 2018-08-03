@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Person } from '../shared/user.model';
-import { UserService } from '../shared/user.service';
+import { Person } from '../shared/person.model';
+import { UserService } from '../shared/person.service';
 
 @Component({
   selector: 'app-bio',
@@ -9,7 +9,7 @@ import { UserService } from '../shared/user.service';
 })
 export class BioComponent implements OnInit {
 
-  @Input() user: Person;
+  @Input() person: Person;
   editable = false;
   editMode = false;
 
@@ -27,8 +27,8 @@ export class BioComponent implements OnInit {
   }
 
   putBio() {
-    this.userService.putUser(this.user)
-      .subscribe((data: Person) => this.user = data);
+    this.userService.putUser(this.person)
+      .subscribe((data: Person) => this.person = data);
     this.switchEditable();
     this.switchMode();
   }
