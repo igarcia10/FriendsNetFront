@@ -57,7 +57,8 @@ export class PostComponent implements OnInit {
   like(likeType: number) {
     const like = new Like();
     like.person = this.person;
-    this.postService.addLike(this.post.id, this.person.id, likeType);
+    this.postService.addLike(this.post.id, this.person.id, likeType)
+      .subscribe((data: Post) => this.post = data);
     switch (likeType) {
       case 1:
         {
