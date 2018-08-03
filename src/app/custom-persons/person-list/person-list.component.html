@@ -1,5 +1,5 @@
 <div class="person-list">
   <div *ngFor="let customPerson of customPersons">
-    <app-person [customPerson]="customPerson" (select)="selectPerson($event)" (addUser)="addUser($event)" (unfriend)="unfriendUser($event)"></app-person>
+    <app-person [customPerson]="customPerson" (select)="selectPerson($event)" (addUser)="addPerson($event)" (unfriend)="unfriendUser($event)"></app-person>
   </div>
 </div>

@@ -23,8 +23,8 @@ export class PersonListComponent implements OnInit {
     this.select.emit(customPerson);
   }
 
-  addUser(person: Person[]) {
-    this.add.emit(person);
+  addPerson(persons: Person[]) {
+    this.add.emit(persons);
   }
 
   unfriendUser(person: Person) {
