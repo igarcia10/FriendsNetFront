@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Person } from '../users/shared/person.model';
-import { UserService } from '../users/shared/person.service';
-import { CustomPerson } from '../persons/shared/custom-person.model';
+import { Person } from '../users/shared/user.model';
+import { UserService } from '../users/shared/user.service';
+import { CustomPerson } from '../persons/shared/person.model';
 import { Friend } from './shared/friend.model';
 import { ActivatedRoute } from '@angular/router';
 
