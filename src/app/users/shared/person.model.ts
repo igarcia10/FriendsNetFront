@@ -1,6 +1,6 @@
 import { Friend } from '../../friends/shared/friend.model';
 
-export class User {
+export class Person {
 
     id: number;
     name: string;

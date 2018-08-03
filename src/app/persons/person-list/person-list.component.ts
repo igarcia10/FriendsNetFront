@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Person } from '../shared/person.model';
-import { User } from '../../users/shared/user.model';
+import { CustomPerson } from '../shared/custom-person.model';
+import { Person } from '../../users/shared/person.model';
 
 @Component({
   selector: 'app-person-list',
@@ -9,25 +9,25 @@ import { User } from '../../users/shared/user.model';
 })
 export class PersonListComponent implements OnInit {
 
-  @Input() persons: Person[] = [];
-  @Output() select = new EventEmitter<Person>();
-  @Output() add = new EventEmitter<User[]>();
-  @Output() unfriend = new EventEmitter<User>();
+  @Input() persons: CustomPerson[] = [];
+  @Output() select = new EventEmitter<CustomPerson>();
+  @Output() add = new EventEmitter<Person[]>();
+  @Output() unfriend = new EventEmitter<Person>();
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  selectPerson(person: Person) {
+  selectPerson(person: CustomPerson) {
     this.select.emit(person);
   }
 
-  addUser(user: User[]) {
+  addUser(user: Person[]) {
     this.add.emit(user);
   }
 
-  unfriendUser(user: User) {
+  unfriendUser(user: Person) {
     this.unfriend.emit(user);
   }
 

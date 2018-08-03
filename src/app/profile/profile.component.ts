@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../users/shared/user.service';
-import { User } from '../users/shared/user.model';
-import { Person } from '../persons/shared/person.model';
+import { UserService } from '../users/shared/person.service';
+import { Person } from '../users/shared/person.model';
+import { CustomPerson } from '../persons/shared/custom-person.model';
 import { PostService } from '../posts/shared/post.service';
 import { Post } from '../posts/shared/post.model';
 
@@ -12,8 +12,8 @@ import { Post } from '../posts/shared/post.model';
 })
 export class ProfileComponent implements OnInit {
 
-  user: User;
-  persons: Person[] = [];
+  user: Person;
+  persons: CustomPerson[] = [];
   posts: Post[] = [];
 
   constructor(private userService: UserService,
@@ -21,7 +21,7 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit() {
     this.userService.getUserById(1)
-      .subscribe((data: User) => {
+      .subscribe((data: Person) => {
         this.user = data;
         if (this.user) {
           this.getPersons();
@@ -37,7 +37,7 @@ export class ProfileComponent implements OnInit {
 
   getPersons() {
     this.user.friends.forEach((friend: any) => {
-      const p = new Person();
+      const p = new CustomPerson();
       p.user = friend;
       p.isFriend = true;
       this.persons.push(p);

@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Post } from '../shared/post.model';
 import { Like } from '../shared/like.model';
-import { User } from '../../users/shared/user.model';
+import { Person } from '../../users/shared/person.model';
 import { PostService } from '../shared/post.service';
 
 @Component({
@@ -12,7 +12,7 @@ import { PostService } from '../shared/post.service';
 export class PostComponent implements OnInit {
 
   @Input() post: Post;
-  @Input() user: User;
+  @Input() user: Person;
   @Output() remove = new EventEmitter<Post>();
   coolLikes = 0;
   userCoolLike = false;

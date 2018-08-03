@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Person } from '../shared/person.model';
-import { User } from '../../users/shared/user.model';
-import { UserService } from '../../users/shared/user.service';
+import { CustomPerson } from '../shared/custom-person.model';
+import { Person } from '../../users/shared/person.model';
+import { UserService } from '../../users/shared/person.service';
 
 @Component({
   selector: 'app-person',
@@ -10,10 +10,10 @@ import { UserService } from '../../users/shared/user.service';
 })
 export class PersonComponent implements OnInit {
 
-  @Input() person: Person;
-  @Output() select = new EventEmitter<Person>();
-  @Output() addUser = new EventEmitter<User[]>();
-  @Output() unfriend = new EventEmitter<User>();
+  @Input() person: CustomPerson;
+  @Output() select = new EventEmitter<CustomPerson>();
+  @Output() addUser = new EventEmitter<Person[]>();
+  @Output() unfriend = new EventEmitter<Person>();
   deletable = false;
 
   constructor(private userService: UserService) { }
@@ -26,7 +26,7 @@ export class PersonComponent implements OnInit {
   }
 
   addPerson() {
-    const friends: User[] = [];
+    const friends: Person[] = [];
     friends.push(this.person.user);
     this.addUser.emit(friends);
   }

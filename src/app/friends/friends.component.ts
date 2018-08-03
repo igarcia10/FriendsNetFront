@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from '../users/shared/user.model';
-import { UserService } from '../users/shared/user.service';
-import { Person } from '../persons/shared/person.model';
+import { Person } from '../users/shared/person.model';
+import { UserService } from '../users/shared/person.service';
+import { CustomPerson } from '../persons/shared/custom-person.model';
 import { Friend } from './shared/friend.model';
 import { ActivatedRoute } from '@angular/router';
 
@@ -12,10 +12,10 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class FriendsComponent implements OnInit {
 
-  user: User;
-  users: User[];
-  person: Person;
-  persons: Person[] = [];
+  user: Person;
+  users: Person[];
+  person: CustomPerson;
+  persons: CustomPerson[] = [];
   deletable = false;
   text = '';
 
@@ -25,7 +25,7 @@ export class FriendsComponent implements OnInit {
   ngOnInit() {
     this.text = '';
     this.userService.getUserById(1)
-      .subscribe((data: User) => {
+      .subscribe((data: Person) => {
         this.user = data;
         if (this.user) {
           this.getPersons();
@@ -40,27 +40,27 @@ export class FriendsComponent implements OnInit {
       });
   }
 
-  unfriend(user: User) {
+  unfriend(user: Person) {
     this.user.friends.splice(this.user.friends.indexOf(user), 1);
   }
 
-  add(users: User[]) {
+  add(users: Person[]) {
     this.userService.relate(this.user.id, users)
-      .subscribe((data: User) => this.user = data);
+      .subscribe((data: Person) => this.user = data);
   }
 
   switchDeletable() {
     this.deletable = !this.deletable;
   }
 
-  getPerson(person: Person) {
+  getPerson(person: CustomPerson) {
     this.person = person;
   }
 
   getPersons() {
     if (this.user) {
       this.user.friends.forEach((friend: any) => {
-        const p = new Person();
+        const p = new CustomPerson();
         p.user = friend;
         p.isFriend = true;
         this.persons.push(p);
@@ -71,10 +71,10 @@ export class FriendsComponent implements OnInit {
   searchUser() {
     if (this.text.length > 0) {
       this.users = this.userService.searchUsers(this.text);
-      const searchPersons: Person[] = [];
-      this.users.map((u: User) => {
+      const searchPersons: CustomPerson[] = [];
+      this.users.map((u: Person) => {
         if (u.id !== this.user.id) {
-          const p = new Person();
+          const p = new CustomPerson();
           p.user = u;
           let friends = false;
           u.friends.forEach((friend: Friend) => {

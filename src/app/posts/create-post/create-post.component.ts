@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { PostService } from '../shared/post.service';
 import { Post } from '../shared/post.model';
-import { User } from '../../users/shared/user.model';
+import { Person } from '../../users/shared/person.model';
 import { Like } from '../shared/like.model';
 
 @Component({
@@ -11,7 +11,7 @@ import { Like } from '../shared/like.model';
 })
 export class CreatePostComponent implements OnInit {
 
-  @Input() user: User;
+  @Input() user: Person;
   @Output() newPost = new EventEmitter<Post>();
   post: Post = new Post();
 

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../users/shared/user.service';
-import { User } from '../users/shared/user.model';
+import { UserService } from '../users/shared/person.service';
+import { Person } from '../users/shared/person.model';
 import { PostService } from '../posts/shared/post.service';
 import { Post } from '../posts/shared/post.model';
 
@@ -11,7 +11,7 @@ import { Post } from '../posts/shared/post.model';
 })
 export class HomeComponent implements OnInit {
 
-  user: User;
+  user: Person;
   posts: Post[] = [];
 
   constructor(private userService: UserService,
@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.userService.getUserById(1)
-      .subscribe((data: User) => {
+      .subscribe((data: Person) => {
         this.user = data;
         if (this.user) {
           this.getPosts();
@@ -30,7 +30,7 @@ export class HomeComponent implements OnInit {
   getPosts() {
     this.postService.getPostsByPersonId(this.user.id)
       .subscribe((data: Post[]) => this.posts = data);
-    this.user.friends.forEach((friend: User) => this.postService.getPostsByPersonId(friend.id)
+    this.user.friends.forEach((friend: Person) => this.postService.getPostsByPersonId(friend.id)
       .subscribe((data: Post[]) => data.forEach((post: Post) => this.posts.push(post))));
   }
 

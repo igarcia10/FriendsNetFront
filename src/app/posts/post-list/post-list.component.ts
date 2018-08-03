@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Post } from '../shared/post.model';
-import { User } from '../../users/shared/user.model';
+import { Person } from '../../users/shared/person.model';
 
 @Component({
   selector: 'app-post-list',
@@ -9,7 +9,7 @@ import { User } from '../../users/shared/user.model';
 })
 export class PostListComponent implements OnInit {
 
-  @Input() user: User;
+  @Input() user: Person;
   @Input() posts: Post[];
   @Output() remove = new EventEmitter<Post>();
 
